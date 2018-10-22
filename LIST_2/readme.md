@@ -1,6 +1,6 @@
 # Lista 2
 
-### Dane znajdują się w [data.md](./data.md) lub w pliku [csv](./tabe.csv).
+### Dane znajdują się w [data.md](./data.md) lub w pliku [csv](./table.csv).
 
 Wykresy przedstawiają odchylenie policzone algorytmem podanym poniżej od miejsca roweru w uporządkowanej tablicy, np. na pierwszym wykresie wiedzimy, że połowa rowerów miała niewielkie odchylenie wpisanego kodu od prawdziwego - lekko przekręcony zamek na jednym, dwóch miejscach, badź też wcale.
 

@@ -18,7 +18,7 @@ for i in range (0, 4):
 	    changed = changed + 1
 	sum = sum + res
 
-// Dla mniej rozrzuconych wyników.
+// Dla znormalizowania wyników.
 changed = changed / 2
 sum = sum * changed
 ```

@@ -17,11 +17,13 @@ def mod(a, b):
 
 all_a = data["KOD"]
 all_b = data["KOD_WPISANY"]
+all_c = data["ZAMKNIETY"]
 
 for x in range (0, 31):
-	# print(all_a[x], all_b[x])
+
 	a = parse(all_a[x])
 	b = parse(all_b[x])
+	c = parse(all_c[x])
 	sum = 0
 	changed = 0
 
@@ -38,7 +40,7 @@ for x in range (0, 31):
 	sum = sum * changed
 	arr.append(sum)
 
-	print(a, b, sum)
+	print(a, b, c, sum)
 
 print(arr)
 arr.sort()

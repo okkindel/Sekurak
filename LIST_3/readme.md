@@ -2,6 +2,11 @@
 
 ## Zadanie 1
 
+### Dane
+Cztery tysięce przykładowych pakietów w formie tabelki można znaleźć [tutaj](./packages.md), pierwsza połowa jest przefiltrowana `tcp || http`.
+
+### Rozwiązanie
+
 Konfiguracja laptopa przebiegła w dwóch stopniach. Pracowałem w grupie z Barbarą Banaszak, mój laptop został skonfigurowany tak, aby udostępniał niezabezpieczoną sieć WiFi, natomiast drugi laptop monitorował ją. 
 
 Eksperymenty były przeprowadzane na różnych sieciach, np. `KFC Free Wifi`, `WiFi McDonald`, z marnym skurkiem. Najlepsze efekty osiągneliśmy kopiująć nazwę istniejącej sieci `**WiFi Pasaż Grunwaldzki**`, aczkolwiek liczba połączonych na raz osób nie przekraczała 4. Testowaliśmy również połączenia z niezabezpiecoznymi sieciami nieudostępnionymi przez nas.
@@ -27,3 +32,5 @@ Dla testów sprawdziliśmy niezaszyfrowaną stronę internetową pod domentą PW
 ![2](2.png)
 Na tym zrzucie widać prawdopodobnie rejestracje do systemu wewnetrznego publicznej sieci w Pasażu Grunwaldzkim. Połączenie jest nieszyfrowane ale credentiale są zaszyfrowane po stronie klienta co nieco utrudniało by nieautoryzowany dostęp (ale w żadnym wypadku nie uniemożliwia).
 ![3](3.png)
+
+Zarówno lista witryn jak protokołów zawiera się w [tabelce](./packages.md) w podpowiednich kolumnach.

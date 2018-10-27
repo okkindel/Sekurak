@@ -34,12 +34,38 @@ Jak widać algorytm uważa jeden zamek przekręcony kilka razy za mniesze odchyl
 Dla zamka elektronicznego: 
 ![E.png](./E.png)
 
-Dla zamka fizycznego: 
+Dla zamka mechanicznego: 
 ![K.png](./K.png)
 
 Jak widać, różnica nie jest duża, wynika to z tego, że rowery w zamkach elektronicznych w zdecydowanej większości były przypinane gdzieś wcześniej kłódką. Różnica, chociaż niewielka, jest jednak widoczna. Na obu wykresach widzimy, że mniej więcej połowa rowerów z każdej kategorii miała zamek przekręcony o zaledwie parę oczek, lub wręcz wogóle.
 
 ### Entropia:
+
+Algorytm liczący Entopie:
+```
+import math
+MgL = [8,1,2,1,1,1]
+ML = [5,1,2,1,1,1]
+
+def Entropy(X):
+    e = 0
+    for i in range (0,len(X)):
+        Pri = X[i]/15
+        if(Pri != 0):
+            e += (Pri)*math.log(1/Pri)
+    return e
+
+print(Entropy(MgL))
+print(Entropy(ML))
+```
+
+* Zamek elektroniczny:
+>>> print(Entropy(MgL))  
+`1.3260584080581574`
+* Zamek mechaniczny:
+>>> print(Entropy(ML))  
+`1.3570045525889278`
+
 
 ### Bezpieczeństwo kodu `PIN` na serwerze
 

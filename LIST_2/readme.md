@@ -2,6 +2,12 @@
 
 ### Dane znajdują się w [data.md](./data.md) lub w pliku [csv](./table.csv).
 
+* Liczba przejazdów: 34.
+* Liczba rowerów przypiętych zamkiem elektronicznym: 17.
+* Liczba rowerów przypiętych zamkiem fizycznym: 15.
+
+### Wykresy
+
 Wykresy przedstawiają odchylenie policzone algorytmem podanym poniżej od miejsca roweru w uporządkowanej tablicy, np. na pierwszym wykresie wiedzimy, że połowa rowerów miała niewielkie odchylenie wpisanego kodu od prawdziwego - lekko przekręcony zamek na jednym, dwóch miejscach, badź też wcale.
 
 Algorytm liczący różnicę:
@@ -31,4 +37,20 @@ Dla zamka elektronicznego:
 Dla zamka fizycznego: 
 ![K.png](./K.png)
 
-Jak widać, różnica nie jest duża, wynika to z tego, że rowery w zamkach elektronicznych też były kiedyś przypinane kłódką.
+Jak widać, różnica nie jest duża, wynika to z tego, że rowery w zamkach elektronicznych w zdecydowanej większości były przypinane gdzieś wcześniej kłódką. Różnica, chociaż niewielka, jest jednak widoczna. Na obu wykresach widzimy, że mniej więcej połowa rowerów z każdej kategorii miała zamek przekręcony o zaledwie parę oczek, lub wręcz wogóle.
+
+### Entropia:
+
+### Bezpieczeństwo kodu `PIN` na serwerze
+
+Zaobserwowane w tym przypadku zachowanie użytkowników ciężko przenieść na skuteczność pinu, gdyż pin trzeba wpisać za każdym razem od nowa, aczkolwiek można rozważyć dwa przypadki:
+
+* Jeżeli użytkownicy sami będą wybierać `PIN`, będzię on zazwyczaj prosty, na zasadzie `1234` czy `1111`. Takie piny oczywiście łatwo złamać. Paradoksalnie, dłuższy `PIN` mógłby wpłynąć negatywnie na bezpieczeństwo, mało komu będzie się chciało zapamiętywać skomplikowaną, ośmiocyfrową liczbę, według mnie, istnieje jeszcze większe prawdopodobieństwo, że `PIN` będzie prosty.
+
+* W przypadku kodu narzuconego przez system, rozważań poczynionych podczas wypełniania zadania nie da się w zasadzie przenieść, gdyż kod taki, każdorazowo wpisujemy od nowa, a stare próby nie pozostawiają śladu.
+
+Całkiem podobnie ma sie sprawa w przypadku hasła alfanumerycznego, aczkolowiek świadomość ludzi jest coraz większa, hasła bardziej skomplikowane, a możliwośći dziesiątki razy więcej niż w przypadku 10 cyfr do wyboru.
+
+### Wykrywanie oszustwa
+
+Prowadzący mógłby zebrać kody od wszystkich grup, znaleźć powtarzające się rowery i porównać kody kłódek rowerów. Można również porównać wyniki studentów, jednak 30 próbek może być mocno niemiarodajne i nie powinno się na tej podstawie wystawiać opini.

@@ -44,8 +44,8 @@ Jak widać, różnica nie jest duża, wynika to z tego, że rowery w zamkach ele
 Algorytm liczący Entopie:
 ```
 import math
-MgL = [8,1,2,1,1,1]
-ML = [5,1,2,1,1,1]
+el = [8,1,2,1,1,1]
+ml = [5,1,2,1,1,1]
 
 def Entropy(X):
     e = 0
@@ -55,15 +55,15 @@ def Entropy(X):
             e += (Pri)*math.log(1/Pri)
     return e
 
-print(Entropy(MgL))
-print(Entropy(ML))
+print(Entropy(el))
+print(Entropy(ml))
 ```
 
 * Zamek elektroniczny:
->>> print(Entropy(MgL))  
+> print(Entropy(el))  
 `1.3260584080581574`
 * Zamek mechaniczny:
->>> print(Entropy(ML))  
+> print(Entropy(ml))  
 `1.3570045525889278`
 
 

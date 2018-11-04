@@ -21,6 +21,7 @@ class Decryptor:
             for line in file:
                 self.cryptograms.append(Cryptogram(line))
 
+
     def find_key(self):
         key = []
 

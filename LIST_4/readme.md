@@ -1,2 +1,5 @@
-# Lista 4
+# List 4
 
+## Runing:  
+* `npm install`  
+* `npm start`

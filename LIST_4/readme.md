@@ -18,3 +18,5 @@ SCHEMAT (może być nieczytelny, jest 3:00):
 6. Wszystkie elementy wszystkich nowych tablic XORować z "00100000", otrzymując potencjalne sub-klucze.
 7. W każdej tablicy odrzucić sub-klucze jednoznacznie błędne, a z pozostałych wybrać najczęściej powtarzający się.
 8. Całość poskładać w jeden ciąg i odszyfrować tekst przez XOR.
+
+[Frekwencja liter](https://sjp.pwn.pl/poradnia/haslo/frekwencja-liter-w-polskich-tekstach;7072.html?fbclid=IwAR3bfxIaKlEQkJA13NQDszooyVhTSmKnj3gpjxxiJsxRHTdF9ynYNY_ubWQ).

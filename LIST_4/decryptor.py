@@ -5,13 +5,10 @@ import operator
 class Decryptor:
 
     def __init__(self, data_file):
-        # List of cryptograms from file
         self.cryptograms = []
 
-        # Name of file with cryptograms
         self.data_file = data_file
 
-        # Generating dict with letters and signs frequency (ASCII code).
         self.letters_freq = {
         '0': 10,  '1': 10,  '2': 10,  '3': 10,  '4': 10,  '5': 10,  '6': 10,  '7': 10,  '8': 10,  '9': 10,
             'a': 89, 'i': 82, 'o': 78, 'e': 77, 'z': 56, 'n': 55, 'r': 47, 'w': 47, 's': 43, 't': 40, 'c': 40, 'y': 38,
@@ -20,32 +17,20 @@ class Decryptor:
             ')': 10, 
         }
 
-        # Big letters - 1% frequency
-        for i in range(65, 91):
-            self.letters_freq[chr(i)] = 10
-
-
-        # print(self.letters_freq)
-
-    # Reading cryptograms from file
     def get_data_from_file(self):
         with open(self.data_file, 'r') as file:
             for line in file:
                 self.cryptograms.append(Cryptogram(line))
 
-    # Searching for key which was used to encrypt messages.
     def find_key(self):
         key = []
 
-        # Length of the longest cryptogram
         longest = 0
 
-        # Searching for length of the longest cryptogram
         for crypt in self.cryptograms:
             if len(crypt.chars) > longest:
                 longest = len(crypt.chars)
 
-        # In this loop
         for i in range(0, longest):
             possible_key = {}
             matching_cryptograms = []
@@ -63,7 +48,6 @@ class Decryptor:
 
             tmp_sorted = sorted(possible_key.items(), key=operator.itemgetter(1), reverse=True)
             possible_key = dict(tmp_sorted)
-            print(possible_key)
 
             key.append(self.find_best_key(i, possible_key))
 
@@ -94,11 +78,8 @@ class Decryptor:
 
         return best_possible
 
-    # Write decrypted messages to file
     def output(self):
         key = self.find_key()
-        with open('output.txt', 'w') as file:
-            for crypt in self.cryptograms:
-                for i in range(0, len(crypt.chars)):
-                    file.write(chr(ord(crypt.get_chr(i)) ^ key[i]))
-                file.write('\n')
+        for crypt in self.cryptograms:
+            for i in range(0, len(crypt.chars)):
+                print(chr(ord(crypt.get_chr(i)) ^ key[i]))

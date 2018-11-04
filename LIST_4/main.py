@@ -2,11 +2,10 @@ from decryptor import Decryptor
 
 
 def main():
-    dec = Decryptor('data.txt')
-    dec.get_data_from_file()
-    dec.find_key()
-    dec.output()
-
+    decryptor = Decryptor('data.txt')
+    decryptor.get_data_from_file()
+    decryptor.find_key()
+    decryptor.output()
 
 if __name__ == '__main__':
     main()

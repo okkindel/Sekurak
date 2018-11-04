@@ -1,7 +1,6 @@
 from cryptogram import Cryptogram
 import operator
 
-
 class Decryptor:
 
     def __init__(self, data_file):
@@ -82,4 +81,4 @@ class Decryptor:
         key = self.find_key()
         for crypt in self.cryptograms:
             for i in range(0, len(crypt.chars)):
-                print(chr(ord(crypt.get_chr(i)) ^ key[i]))
+                print(chr(ord(crypt.get_chr(i)) ^ key[i]), end="")

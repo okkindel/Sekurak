@@ -1,0 +1,466 @@
+/* Global Styles */
+BODY, TH, TD, P, DIV, INPUT, SELECT, TEXTAREA, FORM, B, I, U, H1, H2, H3, H4, H5, H6, 
+ DL, DD, DT, UL, LI, OL, OPTION {font-family:arial, helvetica, sans-serif; font-size:12px;}
+
+ body.Page { background-color : #FAFAFA; }
+
+/* Tab Navigation - All Levels */
+a.Tab1LblNormal:link, a.Tab1LblNormal:visited {  font-weight: bold; color: #842616; text-decoration:none; }
+a.Tab1LblNormal:hover { text-decoration: underline; }
+span.Tab1LblSel { font-weight: bold; color: #000; text-decoration:none; white-space: nowrap;}
+
+a.TabLblNormal:link, a.TabLblNormal:visited {  color: #842616; text-decoration:none; }
+a.TabLblNormal:hover { text-decoration: underline; }
+span.TabLblSel { font-weight: bold; color: #000; text-decoration:none; }
+
+/* Level 1 Tab Navigation */
+div.Tab1 { 	background-color: #FFFFFF;   border-bottom: 1px solid #994232; }
+table.Tab1Tbl { background-color: #FFFFFF; }
+td.Tab1Sel { background-color: #FFF; border-top: 1px solid #994232; border-left: 1px solid #994232; border-right: 1px solid #994232; }
+td.Tab1NotSel {	background-color: #ffe6cc; border-top: 1px solid #994232; border-left: 1px solid #994232; border-right: 1px solid #994232; }
+div.Tab1Sel { padding-left: 10px; padding-top: 5px; padding-bottom: 3px; }
+div.Tab1NotSel { padding-left: 10px; padding-top: 3px; padding-bottom: 2px; }
+td.Tab1Gutter {	background-color: #FFFFFF; }
+
+/* Level 2 Tab Navigation */
+div.Tab2 {  background-color: #FFF;	 }
+table.Tab2Tbl { background-color: #FFF; }
+td.Tab2Sel { background-color: #F5F8FF; }
+td.Tab2NotSel {	background-color: #FFF;  padding-left: -1px;}
+td.Tab2LineBkgd { background-color: #C8CBF4; }
+div.Tab2Sel { padding-top: 4px; padding-bottom: 2px; }
+div.Tab2NotSel { padding-bottom: 2px;}
+
+/* Level 3 Tab Navigation */
+div.Tab3 {  background-color: #F5F8FF;	 }
+table.Tab3Tbl { background-color: #F5F8FF; }
+
+/* BUTTONS */
+.Btn1 {background:#994232;color:#FFF;font-weight:bold;padding:2px 0px;margin:0px 0px 1px 0px;border:0px none #000; }
+.Btn1Hov {cursor:pointer;background:#994232;color:#FBE249;font-weight:bold;padding:2px 0px;margin:0px 0px 1px 0px;border:0px none #000}
+.Btn1Dis {cursor:default;background:#DFDFDF;color:#9F9F9F;font-weight:bold;padding:2px 0px;margin:0px 0px 1px 0px;border:0px none #000}
+.Btn1Def {background:#994232;color:#FFF;font-weight:bold;padding:1px 0px;margin:0px 2px 1px 0px;border:3px double #fff;}
+.Btn1DefHov {cursor:pointer;background:#994232;color:#FBE249;font-weight:bold;padding:1px 0px;margin:0px 2px 1px 0px;border:3px double #fff;}
+
+.Btn1Mni {background:#994232;color:#fff;font-size:10px;font-weight:bold;padding:2px 0px;margin:0px;border:0px none #000}
+.Btn1MniHov {cursor:pointer;background:#994232;color:#FBE249;font-size:10px;font-weight:bold;padding:2px 0px;margin:0px;border:0px none #000}
+.Btn1MniDis {cursor:default;background:#DFDFDF;color:#9F9F9F;font-size:10px;font-weight:bold;padding:2px 0px;margin:0px;border:0px none #000}
+
+.Btn2 {background:#E2E0F5;color:#842616;font-weight:bold;padding:2px 0px;margin:0px 0px 1px 0px;border:0px none #000}
+.Btn2Hov {cursor:pointer;background:#CCF;color:#842616;font-weight:bold;padding:2px 0px;margin:0px 0px 1px 0px;border:0px none #000}
+.Btn2Dis {cursor:default;background:#DFDFDF;color:#9F9F9F;font-weight:bold;padding:0px;margin:0px 0px 2px 0px;border:0px none #000}
+
+.Btn2Mni {background:#E2E0F5;color:#842616;font-size:10px;font-weight:bold;padding:1px;margin:0px;border:0px none #000}
+.Btn2MniHov {cursor:hand;background:#CCF;color:#842616;font-size:10px;font-weight:bold;padding:1px;margin:0px;border:0px none #000}
+.Btn2MniDis {cursor:default;background:#DFDFDF;color:#9F9F9F;font-size:10px;font-weight:bold;padding:1px;margin:0px;border:0px none #000}
+
+/* BREADCRUMBS */
+.BcmWhtDiv    { margin: 10px 10px 0px 10px; }
+.BcmGryDiv  { background-color: #ccc; margin: 8px 10px 7px 10px; }
+.BcmGryTbl  { background-color: #ccc; }
+a.BcmLnk:link, a.BcmLnk:visited {color:#842616; text-decoration:none; }
+a.BcmLnk:hover {color:#842616; text-decoration:underline; }
+.BcmTxt {color:#333; font-weight: bold; }
+.BcmSep {color:#333; }
+td.BreadCrumb { padding : 0px 24px 5px 1px;}
+table.indent { margin: 10px 0px 10px 10px; }
+
+/* PAGE TITLE */
+.TtlTxtDiv {margin:17px 0px 0px 10px;}
+.TtlLin { border-right:solid 0px #FFF; background-color: #B7B7B7;}
+.TtlTxt {color:#808080; font-size: 22px; }
+.TtlActDiv { margin: 10px 10px 0px 10px;}
+.TtlVewDiv { margin: 10px 10px 0px 10px; }
+.TtlVewLbl { color: #666; font-weight: bold;  }
+.TtlBtnDiv { background-color: #fff; margin: 0px 10px 5px 10px  }
+
+/* TABLES */
+div.TableDiv { margin: 10px 0px 0px 0px; }
+table.TblMail { background-color: #FFF; color: #333; width: 100%; border: #FF9933 1px solid; }
+
+/* TABLE TITLE */
+.TblTtlTxt { background-color: #FDF5EE; color: #994232; font-weight: bold; font-size: 15px;}
+table.TblMail td.TblTtlTd  { background-color: #FDF5EE; padding: 3px 10px; border:none;}
+
+/* MAIL MESSAGE VIEW */
+table.TblMlMsg { border : 1px solid #ff9933; border-top: none;}
+td.TblTopbdr { background-color: #ff9933; border:none;}
+td.TblTdLbl { background-color: #E5E5E5; border-left: none; border-bottom: solid 1px #FFF; border-right:none; border-top: none; padding: 4px 10px 4px;}
+td.TblTdBcr { background-color: #CCC; border-left: none; border-bottom: 1px solid #FFF; border-right:none; border-top: none; padding: 4px 10px 4px;}
+table.TblMlMsg td.TblMsgAct { border: none; background-color: #CCC; padding:5px 10px; border-bottom : 1px solid #FFF; } 
+td.TblTdFld { background-color: #EEEEEE; border-bottom: solid 1px #FFF; border-left: none; border-right:none; border-top: none; padding-left: 10px;}
+
+/*field labels*/
+span.fieldLabel { font: bold 12px Arial, Helvetica, sans-serif; color: #666; }
+
+/*last row before message body*/
+td.TblTdLblLst { background-color: #E5E5E5; border-left: none; border-bottom: solid 1px #ff9933; border-right:none; border-top: none; padding: 4px 10px 5px;}
+td.TblTdFldLst { background-color:#EEEEEE; border-bottom: solid 1px #ff9933; border-left: none; border-right:none; border-top: none; padding-left: 10px;}
+
+/* message body style */
+td.MsgBdy { background-color: #FFF; padding: 10px 10px 2px 10px; }
+
+/* share folder */
+td.SectionHeadershare { padding-left: 10px; padding-top: 7px; padding-bottom: 5px; }
+
+/* MAIL SEARCH ADDRESS BOOK */
+/* Last Cc/Bcc columns */
+table.TblMail td.TblTdCcBcc { border-bottom: none; padding: 4px 5px 2px 5px;}
+table.TblMail th.TblThCcBcc { padding: 0px 0px 2px 5px;}
+
+/* MAIL COMPOSE */
+div.MlTlbar { margin: 0px 0px 0px 10px; }
+td.TblTdFldcmpse { background-color:#EEEEEE; border-left: none; border-right:none; border-top: none; padding-left: 10px; padding-top: 5px; padding-bottom: 5px; padding-right: 0px;}
+td.SubSectionHdrMl { padding-left: 10px; }
+
+/*message section*/
+td.SectionHeaderCm { padding-top: 7px;  padding-bottom: 10px; }
+td.TdTxtHtm { padding-bottom: 8px; }
+
+/*spellcheck section*/
+td.InputSplChk {margin-top: 8px;}
+
+/* MAIL TABLE ACTIONS ROW */
+.TblActLbl { color:#666;font-weight:bold; }
+table.TblMail td.TblActTdLst {
+	border: none;
+	background-color: #CCC;
+	padding:5px 10px;
+}
+table.TblMail td.TblActTd  {
+	border: none;
+	background-color: #CCC;
+	padding:5px 10px;
+	border-bottom : 1px solid #FFF;
+}
+.ActMenu { background-color:#E5E5E5; color:#842616; }
+
+/*spacing for pagination text*/
+.paginationtxtpadding { padding: 0px 0px 0px; }
+
+/* DEFAULT TABLE CELL APPEARANCE */
+table.TblMail td { border-left: solid 6px #FFF; border-bottom: solid 1px #d8d8d8; border-top:none; border-right:none; padding: 5px 0px 0px; vertical-align:top;}
+
+/* Default Table Cell as Last Row */
+table.TblMail td.TblTdLst { border-left: solid 1px #FFF; border-bottom: none; border-top:none; border-right:none; padding: 4px 5px 3px;}
+table.TblMail td.TblTdQkAddLst { border-left: solid 1px #FFF; border-bottom: none; border-top:none; border-right:none; padding: 12px 5px 2px;}
+
+/* Default Table Cell in First Column */
+table.TblMail td.TblTdCl1 { border-left: none; border-bottom: solid 1px #d8d8d8; border-top:none; border-right:none; padding: 4px 5px 2px 6px;}
+
+/* Default Table Cell as Last Row in First Column */
+table.TblMail td.TblTdCl1Lst { border:none; padding: 4px 5px 4px 6px;}
+
+/* DEFAULT TABLE CELL APPEARANCE FOR FOLDER CELLS*/
+/* Default Table Cell for system folders */
+table.TblInside td.SysFolders {border: none; padding: 0px 0px 4px 0px;}
+
+/* Default Table Cell for Separator */
+table.TblMail td.TblTdSep {	border: none; background-color: #e5e5e5; padding:5px 5px 5px 5px;}
+
+/* Default Table Cell for Last Row before separator/Action row */
+table.TblMail td.TblTdSepLst {border-bottom: none;  border-left: none; border-top:none; border-right:none; padding: 4px 5px 2px 5px;}
+
+/* Default Table Cell in first column */
+table.TblMail td.TblTdCl1Mail {border-bottom: solid 1px #d8d8d8; border-left: none; border-top:none; border-right:none; padding: 4px 5px 2px 5px;}
+
+/* DEFAULT TABLE COLUMN HEADER */
+table.TblMail th {
+	border-left: solid 6px #FFF;
+	border-bottom: solid 1px #d8d8d8;
+	border-top:none;
+	border-right:none;
+	text-align:left;
+	vertical-align:bottom;
+	padding: 5px 5px 3px 1px;
+	background : #FFF;
+}
+
+/* Default Table Header for first column */
+table.TblMail th.TblThCl1 { border-left: none; border-bottom: solid 1px #d8d8d8; border-top:none; border-right:none; text-align:left; padding: 5px 5px 3px 10px;}
+
+/* Default Table Header for single image columns */
+table.TblMail th.TblThImg {padding: 4px 5px 5px 5px;}
+
+/* Last Table cell for single image columns */
+table.TblMail td.TblTdImg {padding: 4px 5px 3px 5px; border-bottom: none;}
+
+/* Non-Sortable Column Header Text */
+.TblHdrTxt {color: #666; font-weight: bold;}
+
+/* CURRENT SORT COLUMN */
+/* Header Cell For Current Sort Column */
+table.TblMail th.TblThSrt {
+	background-color: #E5E5E5;
+	border-left: solid 10px #FFF;
+	border-bottom: solid 2px #FFF;
+	border-right:none;
+	border-top:none;
+	padding: 6px 5px 2px;
+}
+
+/* Standard Appearance for Sort Column Cells */
+table.TblMail td.TblTdSrt { background-color: #E5E5E5; border-left: solid 10px #FFF; border-bottom: solid 2px #FFF; border-right:none; border-top: none; padding: 4px 5px 0px;}
+
+/* Last Row in Sort Column */
+table.TblMail td.TblTdSrtLst { background-color: #E5E5E5; border-left: solid 10px #FFF; border-bottom: none; border-right:none; border-top: none; padding: 4px 5px 2px;}
+
+/* Header Cell When Current Sort Column is First Column */
+table.TblMail th.TblTdSrtCl1 { background-color: #E5E5E5; border-left: none; border-bottom: solid 2px #FFF; border-right:none; border-top:none; padding: 6px 5px 2px 10px;}
+
+/* Appearance for Sort Column Cells When Current Sort Column is First Column */
+table.TblMail td.TblTdSrtCl1 { background-color: #E5E5E5; border-left: none; border-bottom: solid 2px #FFF; border-right:none; border-top: none; padding: 4px 5px 3px 10px;}
+
+/* Last Row in Sort Column When Current Sort Column is First Column*/
+table.TblMail td.TblTdSrtCl1Lst { background-color: #E5E5E5; border: none; padding: 4px 5px 3px 10px;}
+
+/* Header Cell When Current Sort Column is Selection Column */
+table.Tbl th.TblTdSrtSelCl1 { background-color: #E5E5E5; border-left: none; border-bottom: solid 2px #FFF; border-right:none; border-top:none; text-align:center;  padding: 5px 5px 3px 10px;}
+
+/* Appearance for Sort Column Cells When Current Sort Column is Selection Column */
+table.Tbl td.TblTdSrtSelCl1 { background-color: #E5E5E5; border-left: none; border-bottom: solid 2px #FFF; border-right:none; border-top: none; padding: 1px 3px;}
+
+/* Last Row in Sort Column When Current Sort Column is Selection Column */
+table.Tbl td.TblTdSrtSelCl1Lst { background-color: #E5E5E5; border: none; padding: 1px 3px;}
+
+/* SELECTION COLUMN */
+/* Header Cell For Selection Column */
+table.Tbl th.TblTdSel { border-left: none; border-bottom: none; border-top:none; border-right:none; text-align:center; vertical-align:bottom; padding: 1px 5px 4px 10px;}
+
+/* Standard Appearance for Selection Column Cells */
+table.Tbl td.TblTdSel { border-left: none; border-bottom: solid 1px #d8d8d8; border-top:none; border-right:none; text-align:center; padding: 1px 3px;}
+
+/* For last Row in Selection Column */
+table.Tbl td.TblTdSelLst { border:none; text-align:center; padding: 1px 3px;}
+
+/* SPACER ROW */
+table.Tbl td.TblTdSpc { border-left: solid 16px #FFF; border-bottom: solid 1px #EAEAEA; }
+table.Tbl td.TblTdSpcLst { border-left: solid 16px #FFF; border-bottom: none; }
+
+/* Table Navigation Links */
+a.TblHdrLnk:link, a.TblHdrLnk:visited {color:#842616; text-decoration:none; font-weight:bold;}
+a.TblHdrLnk:hover {color:#842616; text-decoration:underline; font-weight:bold;}
+a.TblNavLnk:link, a.TblNavLnk:visited {color:#842616; text-decoration:none;}
+a.TblNavLnk:hover {color:#842616; text-decoration:underline;}
+a.TblActLnk:link, a.TblActLnk:visited {color:#842616; text-decoration:none;}
+a.TblActLnk:hover {color:#842616; text-decoration:underline;}
+
+/* Message Text in Table */
+.TblMsgTxt {color: #333; }
+
+/* PAGINATION STYLES */
+.TblPgnTxtBld {color:#666;font-weight:bold;}
+.TblPgnTxt {color:#666;}
+
+/* ADD-REMOVE-IDIOM */
+.AddRmvLbl { color:#666;font-weight:bold;padding-bottom:3px; }
+.AddRmvLbl2 { color:#333;padding-bottom:3px; }
+.AddRmvBtnTbl .Btn1 {width:100%;}
+.AddRmvBtnTbl .Btn1Hov {width:100%;}
+.AddRmvBtnTbl .Btn1Dis {width:100%;}
+.AddRmvBtnTbl .Btn2 {width:100%;}
+.AddRmvBtnTbl .Btn2Hov {width:100%;}
+.AddRmvBtnTbl .Btn2Dis  {width:100%;}
+.AddRmvVrtFst {margin: 5px 0px 10px 0px; }
+.AddRmvVrtWin {margin: 5px 0px 10px 5px;}
+.AddRmvVrtBwn {margin: 5px 0px 10px 10px;}
+.AddRmvHrzWin {margin-bottom: 3px;}
+.AddRmvHrzBwn {margin-top: 8px;}
+
+/* INLINE ALERTS */
+.AlrtErrTxt {color:#C00;font-weight:bold;}
+.AlrtWrnTxt {color:#C90;font-weight:bold;}
+.AlrtInfTxt {color:#669;font-weight:bold;}
+.AlrtMnoTxt {font-family:monospace;}
+.AlrtStrTxt {font-weight:bolder;}
+.AlrtLnkDiv {padding-top:4px;}
+.AlrtLnkArw {font-family:verdana,sans-serif;color:#899ce6}
+a.AlrtLnk:link, a.AlrtLnk:visited {color:#842616; text-decoration:none;}
+a.AlrtLnk:hover {color:#842616; text-decoration:underline;}
+
+/*POPUP ALERTS */
+div.AlrtSubTtl { margin: 10px 10px 0px 10px; }
+div.AlrtTxt { margin: 6px 10px 0px 10px; }
+div.AlrtAct { margin: 20px 10px 0px 10px; }
+
+/* FIELD LABELS */
+.Lbl1 {color:#333;font-weight:bold;font-size:15px;}
+.Lbl2 {color:#666;font-weight:bold;}
+.Lbl3 {color:#333;}
+.Lbl4 {	color: #333; font-weight: bold;}
+.Lbl5 {color:#666;}
+
+/* HREFs - TAG-SPECIFIC APPROACH */
+/* Page Links */
+a.Lnk:link, a.Lnk:visited {
+	color:#842616;
+	text-decoration:none;
+	}
+a.Lnk:hover {
+	color:#842616;
+	text-decoration:underline;
+	}
+a.LnkBold:link, a.LnkBold:visited {
+	color:#842616;
+	text-decoration:none;
+	font-weight : bold;
+}
+a.LnkBold:hover {
+	color:#842616;
+	text-decoration:underline;
+	font-weight : bold;
+}
+
+/* Masthead Links */
+a.MstLnk:link, a.MstLnk:visited {color:#842616; text-decoration:none; font-weight:bold;}
+a.MstLnk:hover {color:#842616; text-decoration:underline; font-weight:bold;}
+
+/* Tab Links */
+a.Tab1LblNormal:link, a.Tab1LblNormal:visited {  font-weight: bold; color: #842616; text-decoration:none; }
+a.Tab1LblNormal:hover { text-decoration: underline; }
+span.Tab1LblSel { font-weight: bold; color: #000; text-decoration:none; white-space: nowrap;}
+
+a.TabLblNormal:link, a.TabLblNormal:visited {  color: #842616; text-decoration:none; }
+a.TabLblNormal:hover { text-decoration: underline; }
+span.TabLblSel { font-weight: bold; color: #000; text-decoration:none; }
+
+/* Toolbar Links */
+a.ToolLbl:link, a.ToolLbl:visited {  color: #842616; text-decoration:none; }
+a.ToolLbl:hover { text-decoration: underline; }
+
+/* Breadcrumb Link */
+a.BcmLnk:link, a.BcmLnk:visited {color:#842616; text-decoration:none;}
+a.BcmLnk:hover {color:#842616; text-decoration:underline;}
+
+/* Properties Jump Links */
+a.JmpLnk:link, a.JmpLnk:visited {color:#842616; text-decoration:none}
+a.JmpLnk:hover {color:#842616; text-decoration:underline;}
+
+/* Popup Styles */
+body.Popup { background-color: #FFF; }
+td.PopupTitle {	background-color: #842616;	padding: 5px 5px 5px 10px; border: solid 10px #FFF;}
+span.PopupTitleText { font: bold 16px Arial, Helvetica, sans-serif; color: #FFF; }
+
+/* Form Input Styles */
+table.FormInputTable { background-color: #FFFFFF; border-left: solid 10px #FFFFFF; border-right: solid 10px #FFFFFF; }
+table.FormInputTableOptions { background-color: #FFFFFF; border-left: solid 10px #FFFFFF; border-right: solid 10px #FFFFFF; }
+td.SectionHeader {
+	padding-left: 10px;
+	padding-top: 7px;
+	padding-bottom: 17px;
+}
+span.SectionHeader {
+	font: bold 14px Arial, Helvetica, sans-serif; color: #333;
+}
+td.SubSectionHeader {
+	padding-left: 10px;
+	padding-top: 7px;
+	padding-bottom: 4px;
+}
+span.SubSectionHeader {
+	font: bold 12px Arial, Helvetica, sans-serif; color: #333;
+}
+td.PropLabel {
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+}
+td.PropLabelLvl2 {
+	padding-left: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+}
+td.PropLabelWHelp {
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-right: 10px;
+}
+td.PropCheckBox {
+	padding-left: 6px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+td.PropCheckBoxLvl2 {
+	padding-left: 6px;
+	padding-bottom: 5px;
+}
+td.PropInput {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+td.PropInputWHelp {
+	padding-top: 5px;
+}
+td.PropHelp {
+	padding-top: 2px;
+	padding-bottom: 5px;
+}
+td.PropInputWLblAbove {
+	padding-bottom: 5px;
+}
+td.SectionDivider {
+	background-color: #E4E2E3;
+}
+td.SubSectionDivider {
+	background-color: #E4E2E3;
+	margin-bottom : 10px;
+	margin-left : 10px;
+}
+td.Indent {
+	padding-left: 6px;
+	padding-bottom: 5px;
+}
+td.RowSpacer {
+	padding-bottom: 6px;
+}
+
+/* Masthead */
+body.masthead-body { background-color: #CCC; }
+table.mastlinktable td { padding: 8px 10px 0px 10px; background-color: #CCC; }
+table.masttable { background-color: #CCC; border-color: #CCC; }
+td.imagecell { padding: 0px 5px; border-bottom: solid 7px #CCC; }
+td.logocell { background-color: #842616; padding-right: 20px; border-right: solid 5px #CCC; border-bottom: solid 7px #CCC; }
+td.appcell { background-color: #FFF; border-right: solid 5px #CCC; padding: 10px; border-bottom: solid 7px #CCC;}
+td.logocell-sec { background-color: #842616;  }
+td.appcell-sec { background-color: #FFF; padding: 5px;}
+span.MstLabel { color: #666; }
+span.MstInfo { color: #333; }
+
+table.MstTbl {
+	background-color: #FFFFFF;
+	/* border-bottom: 1px solid #FFE6CC; */
+}
+td.MstTitle {
+	background-color: #FFF;
+	vertical-align : top;
+}
+td.MstLogo {
+	background-color: #FFFFFF;
+}
+div.MstTitle {
+	padding-left: 10px;
+}
+div.MstUser {
+	padding-left: 10px;
+	vertical-align : bottom;
+	padding-top : 4px;
+	padding-bottom: 7px;
+}
+div.MstLnkBlock {
+	padding-left: 10px;
+	padding-right: 8px;
+	padding-bottom: 6px;
+}
+
+/* Toolbar */
+div.Toolbar {
+	margin: 10px 0px 0px 10px;
+}
+td.ToolbarItem {
+	padding-left: 10px;
+}
+
+td.SkpMst {background-color: #CCCCFF;}
+.DisIcnTxt { color: #666666; text-decoration:none; }

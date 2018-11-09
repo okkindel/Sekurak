@@ -1,0 +1,283 @@
+BODY, TH, TD, P, DIV, INPUT, SELECT, TEXTAREA, FORM, B, I, U, H1, H2, H3, H4, H5, H6, 
+ DL, DD, DT, UL, LI, OL, OPTION {font-family:arial, helvetica, sans-serif; font-size:12px;}
+
+ /* HREF Link Styles */
+a:link, a:visited {color:#842616; text-decoration:none;}
+a:hover { text-decoration:underline; }
+a.TabLnk:link, a.TabLnk:visited { color:#842616; text-decoration:none; }
+a.TabLnk:hover { text-decoration:underline; }
+a.OptionLnk, a.OptionLnk:visited { color: #842616; font-size: 16px;	text-decoration: none; font-weight: bold; }
+a.OptionLnk:hover { text-decoration: underline; }
+a.ToolLnk:link, a.ToolLnk:visited { color: #842616; text-decoration: none; }
+a.ToolLnk:hover { text-decoration: underline; }
+
+/* PAGE TITLE used in Primary Pages (Options Pages)*/
+.TtlTxt {color:#808080; font-size: 22px; }
+.TtlLin { border-right:solid 10px #FFF; background-color: #808080;}
+
+/* VERSION DIALOG */
+.VrsMgn {margin:10px 25px 20px}
+.VrsHdrTxt {color:#666;font-weight:bold;margin-bottom:7px}
+.VrsTxt {color:#333;margin-bottom:10px;font-size:10px; padding-left: 10px; padding-bottom: 5px; padding-right: 10px; }
+.VrsPrdTd {background-color:#FFF}
+.VrsLgoTd {background-color:#842616}
+.VrsLin {background-color:#808080;border-right:solid 15px #FFF}
+.VrsBtnAryDiv {margin-top:5px;margin-right:13px}
+
+/* POPUP WINDOW STYLES */
+body.Popup { background-color: #FFF; }
+
+/* POPUP TITLE (Masthead) */
+div.PopupTitle { width: 100%; }
+table.PopupTitleTbl { background-color: #FFF; }
+td.PopupTitleTd { background-color: #842616; }
+div.PopupTitleText {
+	font: bold 16px Arial, Helvetica, sans-serif;
+	color: #FFF;
+	padding: 5px 5px 5px 10px;
+	background-color: #842616;
+}
+
+/* Pull-down Action Menus */
+.ActMenu {
+	background-color:#E5E5E5; color:#842616; 
+}
+
+/* Form Input Styles */
+table.FormInputTable { background-color: #FFF; border-left: solid 10px #FFF; border-right: solid 10px #FFF; }
+table.FormInputTableOptions { background-color: #F5F8FF; border-left: solid 10px #F5F8FF; border-right: solid 10px #F5F8FF; }
+div.SectionHeader {
+	font: bold 14px Arial, Helvetica, sans-serif;
+	color: #333;
+	padding-top: 2px;
+	padding-bottom: 12px;
+}
+div.SubSectionHeader {
+	font: bold 12px Arial, Helvetica, sans-serif; 
+	color: #333;
+	padding-top: 7px;
+	padding-bottom: 4px;
+}
+div.PropLabel {
+    padding: 5px 0px 5px 10px;
+    color: #666;
+	font-weight : bold;
+}
+div.LabelWHelp {
+	padding-left: 20px;
+	padding-top: 10px;
+	color: #666;
+	font-weight : bold;
+}
+div.PropLabelLvl2 {
+	padding-left: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #666;
+	font-weight : bold;
+}
+div.PropCheckBox {
+	padding-left: 8px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+div.PropCheckBoxLvl2 {
+	padding-left: 8px;
+	padding-bottom: 5px;
+}
+div.PropInput {
+	padding: 5px 0px 5px 10px;
+}
+div.PropInputWHelp {
+	padding-top: 5px;
+	padding-left: 10px;
+}
+div.PropInputWLblAbove {
+	padding-bottom: 5px;
+	padding-left: 10px;
+}
+td.SectionDivider {
+	background-color: #E4E2E3;
+}
+td.SubSectionDivider {
+	background-color: #E4E2E3;
+	margin-bottom : 10px;
+	margin-left : 10px;
+}
+
+/* Message List Header Styles (used in Inbox, Sent, Trash, Drafts, Addresses) */
+div.MsgLabel {
+	padding: 3px 0px 3px 10px;
+	color: #666;
+	font-weight : bold;
+	background-color: #E5E5E5;
+}
+div.MsgProperty {
+	padding: 3px 0px 3px 10px;
+}
+div.MsgContent {
+	padding: 10px 10px 10px 10px;
+	background-color: #FFF;
+}
+
+/* COMPOSE MESSAGE POPUP */
+/* Div that contains the recipient block */
+div.Recipients {padding: 2px 10px 5px 10px; }
+/* Div that contains the message/compose block */
+div.MsgEntry { padding: 2px 10px 5px 10px; }
+/* Div that contains the RTF icons/attributes block */
+div.MsgRTF { padding: 2px 10px 5px 10px; }
+
+/* ADD-REMOVE-IDIOM */
+.AddRmvLbl { color:#666;font-weight:bold;padding-bottom:3px; }
+.AddRmvLbl2 { color:#333;padding-bottom:3px; }
+.AddRmvBtnTbl .Btn1 {width:100%;}
+.AddRmvBtnTbl .Btn1Hov {width:100%;}
+.AddRmvBtnTbl .Btn1Dis {width:100%;}
+.AddRmvBtnTbl .Btn2 {width:100%;}
+.AddRmvBtnTbl .Btn2Hov {width:100%;}
+.AddRmvBtnTbl .Btn2Dis  {width:100%;}
+.AddRmvVrtFst {margin: 5px 0px 10px 0px;width:100px;}
+.AddRmvVrtWin {margin: 5px 0px 10px 5px;width:100px;}
+.AddRmvVrtBwn {margin: 5px 0px 10px 10px;width:100px;}
+.AddRmvHrzWin {margin-top: 3px;width:120px;}
+.AddRmvHrzBwn {margin-top: 8px;width:120px;}
+
+/* Masthead Links */
+a.MstLnk:link, a.MstLnk:visited {color:#842616; text-decoration:none; font-weight:bold;}
+a.MstLnk:hover {color:#842616; text-decoration:underline; font-weight:bold;}
+a.MstUsrLnk:link, a.MstUsrLnk:visited  {color:#842616; text-decoration:none;}
+a.MstUsrLnk:hover {color:#842616; text-decoration:underline; }
+
+/* Masthead */
+span.MstLbl { color: #666; font-size: 14px;}
+span.MstTxt { color: #333; }
+span.MstUsrRole { color: #842616; }
+
+table.MstTbl { background-color: #CCC; }
+td.MstTdTtl { background-color: #FFF; vertical-align : top; }
+td.MstTdAlm { background-color: #F1F1F1; }
+td.MstTdLogo { background-color: #842616; }
+div.MstDivTtl { padding-left: 10px; 	vertical-align: top; }
+div.MstDivSecTtl { padding-left: 10px; vertical-align: top; padding-bottom : 15px; }
+div.MstDivUsr {	padding: 5px 0px 10px 10px; vertical-align : bottom; }
+div.MstDivAlmRow { padding-left: 10px; padding-right : 10px; padding-bottom: 5px; }
+div.MstDivAlmBotRow { padding-left: 10px; padding-right : 10px; padding-bottom: 10px; }
+div.MstDivPrgRow { padding-left: 10px; padding-right : 10px; padding-top: 10px; }
+div.MstDivSch { vertical-align: text-bottom;  }
+
+/* LOGIN */
+div.logLblSvrNam { margin: 0px 0px 5px 17px; color:#666; font-weight: bold; }
+div.logTxtSvrNam { margin: 0px 0px 5px 10px; }
+div.logLbl { margin: 0px 0px 2px 17px; color:#666; font-weight: bold; }
+div.logInp { margin: 0px 0px 2px 10px; }
+div.logLblLst { margin: 0px 0px 10px 17px; color:#666; font-weight: bold; }
+div.logInpLst { margin: 0px 0px 10px 10px; }
+div.logBtn { margin: 0px 0px 15px 10px; }
+div.logHlp { margin: 0px 15px 15px 10px; }
+div.logErr { margin: 15px 15px 7px 10px; }
+div.logCpy { width : 720px; }
+.logTxtCpy { font-size: 8pt; color: #999 }
+
+/* BUTTONS */
+.Btn1 {background:#994232;color:#FFF;font-weight:bold;padding:2px 0px;margin:0px 2px 1px 0px;border:0px none #000; }
+.Btn1Hov {cursor:pointer;background:#994232;color:#FBE249;font-weight:bold;padding:2px 0px;margin:0px 2px 1px 0px;border:0px none #000}
+.Btn1Dis {cursor:default;background:#DFDFDF;color:#9F9F9F;font-weight:bold;padding:2px 0px;margin:0px 2px 1px 0px;border:0px none #000} 
+.Btn1Def {background:#994232;color:#FFF;font-weight:bold;padding:1px 0px;margin:0px 2px 1px 0px;border:3px double #fff; }
+.Btn1DefHov {cursor:pointer;background:#994232;color:#FBE249;font-weight:bold;padding:1px 0px;margin:0px 2px 1px 0px;border:3px double #fff;}
+.Btn1Mni {background:#994232;color:#FFF;font-size:10px;font-weight:bold;padding:2px 0px;margin:0px 2px 0px 0px;border:0px none #000}
+.Btn1MniHov {cursor:pointer;background:#994232;color:#FBE249;font-size:10px;font-weight:bold;padding:2px 0px;margin:0px 2px 0px 0px;border:0px none #000}
+.Btn1MniDis {cursor:default;background:#DFDFDF;color:#9F9F9F;font-size:10px;font-weight:bold;padding:2px 0px;margin:0px 2px 0px 0px;border:0px none #000}
+.Btn2 {background:#E2E0F5;color:#842616;font-weight:bold;padding:2px 0px;margin:0px 2px 1px 0px;border:0px none #000}
+.Btn2Hov {cursor:pointer;background:#CCF;color:#842616;font-weight:bold;padding:2px 0px;margin:0px 2px 1px 0px;border:0px none #000}
+.Btn2Dis {cursor:default;background:#DFDFDF;color:#9F9F9F;font-weight:bold;padding:2px 0px;margin:0px 2px 1px 0px;border:0px none #000}
+.Btn2Mni {background:#E2E0F5;color:#842616;font-size:10px;font-weight:bold;padding:2px 0px;margin:0px 2px 0px 0px;border:0px none #000}
+.Btn2MniHov {cursor:pointer;background:#CCF;color:#842616;font-size:10px;font-weight:bold;padding:2px 0px;margin:0px 2px 0px 0px;border:0px none #000}
+.Btn2MniDis {cursor:default;background:#DFDFDF;color:#9F9F9F;font-size:10px;font-weight:bold;padding:2px 0px;margin:0px 2px 0px 0px;border:0px none #000}
+
+/* INLINE ALERTS */
+div.Alert {
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 4px;
+}
+div.PopupAlert {
+	padding-left: 15px;
+	padding-bottom: 10px;
+}
+.AlrtErrTxt {color:#C00;font-weight:bold;}
+.AlrtWrnTxt {color:#C90;font-weight:bold;}
+.AlrtInfTxt {color:#669;font-weight:bold;}
+.AlrtMnoTxt {font-family:monospace;}
+.AlrtStrTxt {font-weight:bolder;}
+.AlrtLnkDiv {padding-top:4px;}
+.AlrtLnkArw {font-family:verdana,sans-serif;color:#899ce6}
+a.AlrtLnk:link, a.AlrtLnk:visited {color:#842616; text-decoration:none;}
+a.AlrtLnk:hover {color:#842616; text-decoration:underline;}
+
+/* GENERIC FIELD LABELS */
+.LblLev1Txt {color: #333;font-weight:bold;font-size:15px;}
+.LblLev2Txt {color: #666;font-weight:bold;}
+.LblLev3Txt {color: #333;}
+
+/* INLINE HELP  */
+.HlpPgeTxt { color: #333; }
+.HlpFldTxt { font-size: 10px; color: #333; }
+a.HlpPgeLnk:link, a.HlpPgeLnk:visited { color: #842616; text-decoration: none;}
+a.HlpPgeLnk:hover { color: #842616; text-decoration: underline;}
+a.HlpFldLnk:link, a.HlpFldLnk:visited { color: #842616; text-decoration: none; font-size: 10px;}
+a.HlpFldLnk:hover { color: #842616; text-decoration: underline; font-size: 10px;}
+
+/*TABLE STYLE */
+
+/* OUTER TABLE THAT SETS COLOR FOR NETSCAPE 4.x */
+table.OuterTbl { background: #E4E4E4; width: 100%; }
+
+/* ACTION TABLE GLOBAL STUFF */
+table.Tbl {	background-color: #E4E4E4; color: #333; }
+
+/* DEFAULT TABLE CELL APPEARANCE */
+table.Tbl td { background-color: #FFF; vertical-align: top;}
+div.TblTd { padding: 4px 5px 2px; color: #333;}
+
+/* DEFAULT TABLE COLUMN HEADER */
+table.Tbl th { text-align:left; background-color: #FFF; }
+
+/* Non-Sortable Column Header Text */
+div.TblHdrTxt {text-align: left; padding: 4px 5px 2px; color: #666; font-weight: bold;}
+
+/* Header Cell For Current Sort Column */
+table.Tbl th.TblThSrt {  background-color: #E5E5E5; }
+
+/* TABLE TITLE */
+table.Tbl td.TblTtlTd  { background-color: #919191;  border: none;}
+div.TblTtlTxt { color: #FFF; font-weight: bold; font-size: 15px; padding: 3px 10px 2px 10px; }
+
+/* TABLE TOP */
+table.Tbl td.TableTop { background-color: #CCC; border: none; }
+
+/* FOLDERS PAGE - GRAY ROW Separator */
+table.Tbl td.GraySep {
+	background-color: #E5E5E5;
+}
+
+/* ACTIONS ROW */
+table.Tbl td.TblActTd  { border: none; background-color: #CCC;}
+div.TblActLbl { color:#666; font-weight:bold; padding:5px 10px; }
+
+
+
+/* Old Web Mail Styles */
+.areatitle {  font-weight: bold; color: #ffffff }
+h1 { font-weight: bold }
+h2 { font-weight: bold }
+h3 { font-weight: bold }
+.small-font { font-size: smaller }
+.pagelink { text-decoration: underline; color: #0000ff }
+.message-text { font-weight: bold }
+.message-title { font-size: larger; font-weight: bold }
+.error-border { background-color: #FF0000}
+.warning-border { background-color: #ffcc33}
+.information-border { background-color: #9999cc}
+.tab { font-weight: bold; text-decoration : none }
+.button-label-black { text-decoration : none; color: #000000}

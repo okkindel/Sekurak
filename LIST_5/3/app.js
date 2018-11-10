@@ -1,6 +1,8 @@
 var express = require('express'),
-    fs = require('fs')
-url = require('url');
+    fs = require('fs'),
+    http = require('http'),
+    https = require('https'),
+    url = require('url');
 var app = express();
 
 app.post('/receive', function (request, respond) {
@@ -23,7 +25,21 @@ app.get(/^(.+)$/, function (req, res) {
     res.sendfile(__dirname + '/dist' + req.params[0]);
 });
 
-app.listen(8080);
+var options = {
+    key: fs.readFileSync('../2/server.key'),
+    cert: fs.readFileSync('../2/server.crt'),
+};
+
+var httpServer = http.createServer(app);
+var httpsServer = https.createServer(options, app);
+
+httpServer.listen(8080);
+httpsServer.listen(8880);
+
+
+
+
+// ---------------------------------------
 
 function form2Json(str) {
     "use strict";

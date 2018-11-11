@@ -1,9 +1,7 @@
 # List 4
 
 ## Runing:  
-* `python3 main.py`  
-lub
-* `npm start`
+* `python3 main.py`
 
 ## Algorytm
 

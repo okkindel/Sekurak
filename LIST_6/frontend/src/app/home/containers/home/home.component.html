@@ -10,11 +10,11 @@
             </h1>
         </div>
     </mat-card>
-    <mat-card class="card" *ngIf="!(email$ | async)">
+    <mat-card class="card">
         <div align="center">
             <p>
-                Please <a routerLink="/login" routerLinkActive="active">login</a> or <a routerLink="/register"
-                    routerLinkActive="active">register</a> to start!
+                Begin with <a routerLink="/add-task" routerLinkActive="active">adding new przelew</a> or <a routerLink="/list"
+                    routerLinkActive="active">check your history</a> now!
             </p>
         </div>
     </mat-card>

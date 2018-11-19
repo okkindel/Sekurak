@@ -1,0 +1,24 @@
+<button 
+  class="toolbar__btn shadow"
+  mat-button 
+  [matMenuTriggerFor]="menu">
+  <mat-icon class="">account_circle</mat-icon>
+  {{username}}
+</button>
+
+<mat-menu 
+  #menu="matMenu" 
+  [overlapTrigger]="false">
+  <button 
+    mat-menu-item 
+    (click)="account.emit()">
+    <mat-icon>account_circle</mat-icon>
+    Account
+  </button>
+  <button 
+    mat-menu-item 
+    (click)="logout.emit()">
+    <mat-icon>logout</mat-icon>
+    Logout
+  </button>
+</mat-menu>

@@ -1,0 +1,22 @@
+<button 
+  mat-button (click)='navigateToList()' 
+  class="toolbar__btn shadow">
+  <mat-icon>list</mat-icon>
+  List
+</button>
+
+<app-user-settings 
+*ngIf="username$ | async"
+[username]="username$ | async" 
+(logout)="logout()"
+
+(account)="navigateToAccount()">
+</app-user-settings>
+
+<app-no-user
+  *ngIf="!(username$ | async)"
+  (login)="navigateToLogin()"
+  (register)="navigateToRegister()">
+</app-no-user>
+
+<app-theme-picker></app-theme-picker>

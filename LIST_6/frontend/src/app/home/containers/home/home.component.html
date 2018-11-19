@@ -1,0 +1,44 @@
+<div class="container" appAddTheme>
+    <mat-card class="card">
+        <div align="center">
+            <img src='../../../../assets/logos/logo_white.svg' />
+            <br><br>
+            <h1>
+                <p>
+                    Welcome to GeoQR!
+                </p>
+            </h1>
+        </div>
+    </mat-card>
+    <mat-card class="card" *ngIf="!(username$ | async)">
+        <div align="center">
+            <p>
+                Please <a routerLink="/login" routerLinkActive="active">login</a> or <a routerLink="/register"
+                    routerLinkActive="active">register</a> to start!
+            </p>
+        </div>
+    </mat-card>
+    <mat-card class="card" align="justify">
+        <p>
+            <b>GeoCode</b> is an outdoor recreational activity, in which participants use a Global Positioning
+            System (GPS) receiver or mobile device and other navigational techniques to hide and seek containers,
+            called
+            "tasks" or "quests", at specific locations marked by coordinates all over the world.
+            <br>
+            A typical quest is a small waterproof container containing a logbook and sometimes a pen or pencil. The
+            geocacoder signs the log with their established code name and dates it, in order to prove that they found
+            the
+            quest. After signing the log, the quest must be placed back exactly where the person found it. Larger
+            containers such as plastic storage containers (Tupperware or similar) or ammunition boxes can also contain
+            items for trading, such as toys or trinkets, usually of more sentimental worth than financial. GeoCode
+            shares many aspects with benchmarking, trigpointing, orienteering, treasure-hunting, letterboxing,
+            waymarking
+            and Munzee.
+        </p>
+    </mat-card>
+
+    <button *ngIf="username$ | async" mat-raised-button color="primary" routerLink="/add-task">
+        <mat-icon>add</mat-icon>
+        <span style="margin-left: 1em"><b>Add New Task</b></span>
+    </button>
+</div>

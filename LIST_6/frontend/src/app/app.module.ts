@@ -10,12 +10,15 @@ import { ToolbarModule } from './toolbar/toolbar.module';
 import { QuestModule } from './quest/quest.module';
 import { BadRequestComponent, InfoComponent } from './shared/containers';
 import { ThemesModule } from './themes';
+import { PasswordResetComponent } from './shared/containers/password-reset/password-reset.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     InfoComponent,
     BadRequestComponent,
+    PasswordResetComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import { ThemesModule } from './themes';
     ToolbarModule,
     QuestModule,
     ThemesModule,
+    FormsModule,
   ],
   bootstrap: [AppComponent],
   exports: [

@@ -10,6 +10,7 @@ export class LoginComponent {
 
   @Input() disabled = false;
   @Output() login: EventEmitter<ICredentials> = new EventEmitter();
+  @Output() reset_pass = new EventEmitter();
 
   public credentials: ICredentials = {
     email: '',

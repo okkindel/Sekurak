@@ -1,5 +1,5 @@
 import * as AuthActions from '../../../state/auth/actions/';
-import { SnackbarService } from '../../../shared/services';
+import { SnackbarService, PasswordService } from '../../../shared/services';
 import * as fromAuth from '../../../state/auth/reducers/';
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';

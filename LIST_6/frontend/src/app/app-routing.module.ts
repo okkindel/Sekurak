@@ -6,7 +6,7 @@ import { AuthGuard } from './auth';
 import { ListComponent } from './list/containers';
 import { RegisterPageComponent, LoginPageComponent } from './auth/containers';
 import { AddTaskComponent, QuestDetailsComponent, SummaryComponent } from './quest/containers';
-import { InfoComponent, BadRequestComponent } from './shared/containers';
+import { InfoComponent, BadRequestComponent, PasswordResetComponent } from './shared/containers';
 
 export const routes: Routes = [
   {
@@ -30,6 +30,10 @@ export const routes: Routes = [
   {
     path: 'info',
     component: InfoComponent,
+  },
+  {
+    path: 'reset-pass',
+    component: PasswordResetComponent,
   },
   {
     path: 'list',

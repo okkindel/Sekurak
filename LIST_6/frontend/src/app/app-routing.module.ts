@@ -41,7 +41,7 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'quest/:id',
+    path: 'summary/:id',
     component: QuestDetailsComponent,
     canActivate: [AuthGuard],
   },

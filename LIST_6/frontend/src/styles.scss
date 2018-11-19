@@ -4,9 +4,9 @@
 @include mat-core();
 
 .light-theme {
-    $primary: mat-palette($mat-amber);
-    $accent: mat-palette($mat-orange, A400, A100, A700);
-    $warn: mat-palette($mat-deep-orange);
+    $primary: mat-palette($mat-green);
+    $accent: mat-palette($mat-light-green, A400, A100, A700);
+    $warn: mat-palette($mat-red);
     $background: mat-palette($mat-grey, 900);
     $foreground: mat-palette($mat-grey, 50);
     $theme: mat-light-theme($primary, $accent, $warn);
@@ -14,8 +14,8 @@
 }
 
 .dark-theme {
-    $primary: mat-palette($mat-orange);
-    $accent: mat-palette($mat-orange, A400, A100, A700);
+    $primary: mat-palette($mat-teal);
+    $accent: mat-palette($mat-cyan, A400, A100, A700);
     $warn: mat-palette($mat-deep-orange);
     $background: mat-palette($mat-grey, 900);
     $foreground: mat-palette($mat-grey, 50);

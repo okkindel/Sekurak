@@ -12,7 +12,7 @@ export class LoginComponent {
   @Output() login: EventEmitter<ICredentials> = new EventEmitter();
 
   public credentials: ICredentials = {
-    username: '',
+    email: '',
     password: '',
   };
 }

@@ -7,9 +7,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class UserSettingsComponent {
 
-  @Input() username: string;
+  @Input() email: string;
   @Output() logout = new EventEmitter;
-  @Output() account = new EventEmitter;
 
   constructor() { }
 }

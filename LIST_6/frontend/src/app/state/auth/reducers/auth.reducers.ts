@@ -2,13 +2,13 @@ import { AuthActionsUnion, AuthActionTypes } from '../actions/auth.actions';
 
 export interface IState {
   isLoggedIn: boolean;
-  username: string;
+  email: string;
   token: string;
 }
 
 export const initialState: IState = {
   isLoggedIn: false,
-  username: undefined,
+  email: undefined,
   token: undefined
 };
 
@@ -18,7 +18,7 @@ export function reducer(state = initialState, action: AuthActionsUnion): IState 
       return {
         ...state,
         isLoggedIn: true,
-        username: action.payload.username,
+        email: action.payload.email,
         token: action.payload.token
       };
     }
@@ -34,4 +34,4 @@ export function reducer(state = initialState, action: AuthActionsUnion): IState 
 }
 
 export const getIsLoggedIn = (state: IState) => state.isLoggedIn;
-export const getUsername = (state: IState) => state.username;
+export const getEmail = (state: IState) => state.email;

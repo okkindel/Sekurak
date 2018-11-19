@@ -28,8 +28,17 @@ export const routes: Routes = [
     component: RegisterPageComponent,
   },
   {
+    path: 'info',
+    component: InfoComponent,
+  },
+  {
     path: 'list',
     component: ListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'quest/:id',
+    component: QuestDetailsComponent,
     canActivate: [AuthGuard],
   },
   {

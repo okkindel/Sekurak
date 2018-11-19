@@ -14,6 +14,7 @@ import {
   MatSnackBarModule,
   MatMenuModule,
   MatExpansionModule,
+  MatStepperModule,
   MatTooltipModule
 } from '@angular/material';
 
@@ -31,6 +32,7 @@ import {
     MatButtonToggleModule,
     MatProgressBarModule,
     MatSnackBarModule,
+    MatStepperModule,
     MatMenuModule,
     MatToolbarModule,
     MatTooltipModule
@@ -49,8 +51,9 @@ import {
     MatProgressBarModule,
     MatSnackBarModule,
     MatMenuModule,
+    MatStepperModule,
     MatToolbarModule,
     MatTooltipModule
   ],
 })
-export class MaterialModule {}
+export class MaterialModule { }

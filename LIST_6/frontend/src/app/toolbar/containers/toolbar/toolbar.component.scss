@@ -13,7 +13,8 @@ img {
 
 .toolbar__main {
     background-color: rgba(0, 0, 0, .3);
-    border-radius: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
     height: 100%;
     margin-left: -20px;
     padding-right: 30px;

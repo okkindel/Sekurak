@@ -17,9 +17,9 @@ export class AuthEffects {
     map((action) => action.payload),
     exhaustMap((credentials: IUser) =>
       this.authService
-        .login(credentials.username, credentials.password)
+        .login(credentials.email, credentials.password)
         .pipe(
-          map(auth => auth ? new LoginSuccess({ username: credentials.username, token: auth.access_token }) : new LoginFailure(false)),
+          map(auth => auth ? new LoginSuccess({ email: credentials.email, token: auth.access_token }) : new LoginFailure(false)),
           catchError(error => observableOf(new LoginFailure(error)))
         )
     )

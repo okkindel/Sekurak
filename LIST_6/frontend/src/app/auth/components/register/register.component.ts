@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { IRegister } from '../../models';
+import { ICredentials } from '../../models';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -9,10 +9,9 @@ export class RegisterComponent {
 
   re_password: String = '';
 
-  @Output() register: EventEmitter<IRegister> = new EventEmitter();
+  @Output() register: EventEmitter<ICredentials> = new EventEmitter();
 
-  public credentials: IRegister = {
-    username: '',
+  public credentials: ICredentials = {
     email: '',
     password: '',
   };
@@ -20,7 +19,6 @@ export class RegisterComponent {
   validate_password = () => this.re_password === this.credentials.password;
 
   validate = () => this.validate_password()
-    && this.credentials.username !== ''
     && this.credentials.email !== ''
     && this.credentials.password !== ''
 

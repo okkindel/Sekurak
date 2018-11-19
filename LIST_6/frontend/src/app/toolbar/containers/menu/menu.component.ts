@@ -15,13 +15,13 @@ import { InfoService } from 'src/app/shared/services/info.service';
 })
 export class MenuComponent {
 
-  username$: Observable<string>;
+  email$: Observable<string>;
 
   constructor(
     private store: Store<AppState>,
     private router: Router,
     private infoService: InfoService) {
-    this.username$ = this.store.pipe(select(fromAuth.getUsername));
+    this.email$ = this.store.pipe(select(fromAuth.getEmail));
   }
 
   public logout() {
@@ -31,9 +31,6 @@ export class MenuComponent {
 
   navigateToList() {
     this.router.navigate(['list']);
-  }
-  navigateToAccount() {
-    this.router.navigate(['account']);
   }
   navigateToLogin() {
     this.router.navigate(['login']);

@@ -3,18 +3,12 @@
   mat-button 
   [matMenuTriggerFor]="menu">
   <mat-icon class="">account_circle</mat-icon>
-  {{username}}
+  {{email}}
 </button>
 
 <mat-menu 
   #menu="matMenu" 
   [overlapTrigger]="false">
-  <button 
-    mat-menu-item 
-    (click)="account.emit()">
-    <mat-icon>account_circle</mat-icon>
-    Account
-  </button>
   <button 
     mat-menu-item 
     (click)="logout.emit()">

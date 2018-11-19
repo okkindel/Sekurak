@@ -16,10 +16,10 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-  login(username: string, password: string): Observable<any> {
+  login(email: string, password: string): Observable<any> {
 
     const url = `${this.BASE_URL}/login`;
-    const body = { 'username': username, 'password': password };
+    const body = { 'email': email, 'password': password };
     return this.http.post<IUser>(url, body);
   }
 }

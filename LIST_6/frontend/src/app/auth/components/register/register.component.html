@@ -3,17 +3,6 @@
   <mat-form-field class="full-width">
     <input 
     matInput
-    placeholder="Username" 
-    autofocus 
-    [(ngModel)]="credentials.username" 
-    name="username"
-    minlength="5"
-    required>
-  </mat-form-field>
-
-  <mat-form-field class="full-width">
-    <input 
-    matInput
     placeholder="Email" 
     [(ngModel)]="credentials.email"
     [email]="true"

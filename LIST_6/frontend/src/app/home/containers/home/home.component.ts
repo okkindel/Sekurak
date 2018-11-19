@@ -10,10 +10,10 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent {
 
-  username$: Observable<string>;
+  email$: Observable<string>;
 
   constructor(
     private store: Store<AppState>) {
-    this.username$ = this.store.pipe(select(fromAuth.getUsername));
+    this.email$ = this.store.pipe(select(fromAuth.getEmail));
   }
 }

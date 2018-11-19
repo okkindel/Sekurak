@@ -19,7 +19,7 @@ export class AuthEffects {
       this.authService
         .login(credentials.email, credentials.password)
         .pipe(
-          map(auth => auth ? new LoginSuccess({ email: credentials.email, token: auth.access_token }) : new LoginFailure(false)),
+          map(auth => auth ? new LoginSuccess({ email: credentials.email, token: auth.token }) : new LoginFailure(false)),
           catchError(error => observableOf(new LoginFailure(error)))
         )
     )

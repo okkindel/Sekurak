@@ -33,7 +33,7 @@ export class SummaryComponent implements OnInit {
   }
 
   send() {
-    this.service.send(this.author, this.message.name, this.message.number, this.message.ammount)
+    this.service.submit(this.author, this.message.name, this.message.number, this.message.ammount)
       .subscribe(
         response => {
           this.infoSevice.showInfo('You were succesfully przlewed.');
@@ -42,7 +42,7 @@ export class SummaryComponent implements OnInit {
   }
 
   fake() {
-    this.service.send(this.author, this.message.name, '6969', this.message.ammount)
+    this.service.submit(this.author, this.message.name, '6969', this.message.ammount)
       .subscribe(
         response => {
           this.infoSevice.showInfo('You were succesfully przlewed.');

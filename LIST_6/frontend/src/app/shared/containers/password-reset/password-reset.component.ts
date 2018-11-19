@@ -13,8 +13,8 @@ export class PasswordResetComponent implements OnInit {
   message: String;
   theme: String;
 
-  email: String;
-  pass: String;
+  email: string;
+  pass: string;
 
   constructor(
     private service: PasswordService,

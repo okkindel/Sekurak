@@ -42,7 +42,7 @@ export class SummaryComponent implements OnInit {
   }
 
   fake() {
-    this.service.submit(this.author, this.message.name, '6969', this.message.ammount)
+    this.service.submit(this.author, this.message.name, 'fake_acc_nr', this.message.ammount)
       .subscribe(
         response => {
           this.infoSevice.showInfo('You were succesfully przlewed.');

@@ -13,8 +13,8 @@ export class PasswordResetComponent implements OnInit {
   message: String;
   theme: String;
 
-  email: string;
-  pass: string;
+  email = '';
+  pass = '';
 
   constructor(
     private service: PasswordService,
@@ -27,12 +27,14 @@ export class PasswordResetComponent implements OnInit {
     this.store.pipe(select(fromThemes.getTheme)).subscribe(res => this.theme = res);
   }
 
+  validate = () => this.email !== '' && this.pass !== '';
+
   submit() {
     this.service.resetPassword(this.email, this.pass)
-    .subscribe(
-      response => {
-        this.infoSevice.showInfo('Your password is changed.');
-      },
-      error => this.snackBar.showMessage(error.error.status || 'No server connection'));
-}
+      .subscribe(
+        response => {
+          this.infoSevice.showInfo('Your password is changed.');
+        },
+        error => this.snackBar.showMessage(error.error.status || 'No server connection'));
+  }
 }

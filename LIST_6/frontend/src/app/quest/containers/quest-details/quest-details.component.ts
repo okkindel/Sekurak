@@ -18,7 +18,6 @@ export class QuestDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.service.summary(this.getQuest()).subscribe(res => {
       this.data = res.data;
-      console.log(res);
     });
   }
 

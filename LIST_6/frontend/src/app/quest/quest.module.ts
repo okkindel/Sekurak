@@ -5,16 +5,19 @@ import { ThemesModule } from '../themes';
 import { MaterialModule } from '../material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { SummaryComponent } from './containers/summary/summary.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [AddTaskComponent, QuestDetailsComponent],
+  declarations: [AddTaskComponent, QuestDetailsComponent, SummaryComponent],
   imports: [
     CommonModule,
     MaterialModule,
     ThemesModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserModule
+    BrowserModule,
+    RouterModule
   ],
   exports: [AddTaskComponent, QuestDetailsComponent]
 })

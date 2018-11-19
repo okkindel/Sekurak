@@ -1,13 +1,10 @@
 <mat-card>
-  <mat-card-title>{{ data.name }}</mat-card-title>
-  <mat-card-subtitle>{{ data.description }}</mat-card-subtitle>
-  Rating: <br>
-  <span *ngFor="let star of stars(data.rate)">
-    <mat-icon>star</mat-icon>
-  </span>
-  <span *ngFor="let star of stars(5 -data.rate)">
-    <mat-icon>star_border</mat-icon>
-  </span>
+  <mat-card-title>To: {{ data.odbiorca }}</mat-card-title>
+  <mat-card-subtitle>
+    Ammount: {{ data.kwota }} PLN
+    <br>
+    Date: {{ data.data | date: 'yyyy-MM-dd' }}
+  </mat-card-subtitle>
   <mat-card-actions>
     <button mat-button routerLink="/quest/{{ data.id }}">OPEN</button>
   </mat-card-actions>

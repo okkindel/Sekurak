@@ -14,9 +14,4 @@ export class ElementComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  stars(n: number): any[] {
-    return Array(n);
-  }
-
 }

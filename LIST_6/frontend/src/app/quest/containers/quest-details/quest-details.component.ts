@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
+import { QuestService } from '../../services';
 
 @Component({
   selector: 'app-quest-details',
@@ -9,18 +9,21 @@ import { Location } from '@angular/common';
 })
 export class QuestDetailsComponent implements OnInit {
 
+  data: any = {};
+
   constructor(
     private route: ActivatedRoute,
-    private location: Location) { }
-
-  id: Number;
+    private service: QuestService) { }
 
   ngOnInit(): void {
-    this.getQuest();
+    this.service.summary(this.getQuest()).subscribe(res => {
+      this.data = res.data;
+      console.log(res);
+    });
   }
 
-  getQuest(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.id = id;
+  getQuest(): number {
+    const id = + this.route.snapshot.paramMap.get('id');
+    return id;
   }
 }

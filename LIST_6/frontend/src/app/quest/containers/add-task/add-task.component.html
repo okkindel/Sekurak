@@ -24,6 +24,17 @@
           </div>
         </form>
       </mat-step>
+      <mat-step [stepControl]="thirdFormGroup" [editable]="isEditable">
+          <form [formGroup]="thirdFormGroup">
+            <ng-template matStepLabel>Fill out ammount.</ng-template>
+            <mat-form-field>
+              <input matInput placeholder="10" formControlName="thirdCtrl" required>
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
       <mat-step>
         <ng-template matStepLabel>Done</ng-template>
         <br>

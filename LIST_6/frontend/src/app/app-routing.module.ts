@@ -5,7 +5,7 @@ import { HomeModule, HomeComponent } from './home';
 import { AuthGuard } from './auth';
 import { ListComponent } from './list/containers';
 import { RegisterPageComponent, LoginPageComponent } from './auth/containers';
-import { AddTaskComponent, QuestDetailsComponent } from './quest/containers';
+import { AddTaskComponent, QuestDetailsComponent, SummaryComponent } from './quest/containers';
 import { InfoComponent, BadRequestComponent } from './shared/containers';
 
 export const routes: Routes = [
@@ -44,6 +44,11 @@ export const routes: Routes = [
   {
     path: 'add-task',
     component: AddTaskComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'summary',
+    component: SummaryComponent,
     canActivate: [AuthGuard],
   },
   {

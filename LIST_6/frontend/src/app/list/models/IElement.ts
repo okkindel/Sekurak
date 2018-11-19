@@ -1,6 +1,8 @@
 export interface IElement {
-    name: String;
-    description: String;
-    rate: number;
     id: number;
+    nadawca: String;
+    odbiorca: String;
+    konto: String;
+    kwota: String;
+    data: String;
 }

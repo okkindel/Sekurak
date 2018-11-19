@@ -1,5 +1,13 @@
 <div class="container" appAddTheme>
-  <p>
-    This is detail for quest with id: {{ id }}
-  </p>
+
+  <mat-card class="item">
+    <mat-card-title>To: {{ data.odbiorca }}</mat-card-title>
+    <mat-card-subtitle>
+      Date: {{ data.data | date: 'yyyy-MM-dd' }}
+    </mat-card-subtitle>
+    <b>From:</b> {{ data.nadawca }} <br>
+    <b>Ammount:</b> {{ data.kwota }} PLN <br>
+    <b>Account:</b> {{ data.konto }} <br>
+  </mat-card>
+
 </div>

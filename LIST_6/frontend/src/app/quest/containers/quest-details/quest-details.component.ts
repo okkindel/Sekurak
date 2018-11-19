@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { QuestService } from '../../services';
+import { SnackbarService } from 'src/app/shared/services';
 
 @Component({
   selector: 'app-quest-details',
@@ -13,12 +14,15 @@ export class QuestDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private service: QuestService) { }
+    private service: QuestService,
+    private snackBar: SnackbarService) { }
 
   ngOnInit(): void {
-    this.service.summary(this.getQuest()).subscribe(res => {
-      this.data = res.data;
-    });
+    this.service.summary(this.getQuest())
+      .subscribe(
+        res => this.data = res.data,
+        error => this.snackBar.showMessage(error.error.status || 'No server connection')
+      );
   }
 
   getQuest(): number {

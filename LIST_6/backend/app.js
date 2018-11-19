@@ -62,7 +62,7 @@ app.post('/login', (req, res, next) => {
         var token = jwt.sign({
           user: req.body.email
         }, 'zagor', {
-          expiresIn: '1h'
+          expiresIn: '300000'
         });
         res.status(200).json({
           status: 'success',
@@ -89,26 +89,28 @@ app.post('/login', (req, res, next) => {
 ///////////////////////////////////////
 
 app.post('/submit', (req, res, next) => {
-  jwt.verify(req.headers.authorization, 'zagor', function (err, decoded) {
-    if (req.body.from == decoded.user) {
-      connection.query('INSERT INTO przelewy (nadawca, odbiorca, konto, kwota, data) VALUES (?, ?, ?, ?, ?)', [req.body.from, req.body.to, req.body.account, req.body.ammount, Date.now()], function (err, rows) {
-        if (err) {
-          res.status(500).json({
-            status: 'Something went wrong.'
-          });
-          throw err;
-        } else {
-          res.status(201).json({
-            status: 'success',
-          });
-        }
-      });
-    } else {
-      res.status(401).json({
-        status: 'Token expired, login again.',
-      });
-    }
-  })
+  try {
+    jwt.verify(req.headers.authorization, 'zagor', function (err, decoded) {
+      if (req.body.from == decoded.user) {
+        connection.query('INSERT INTO przelewy (nadawca, odbiorca, konto, kwota, data) VALUES (?, ?, ?, ?, ?)', [req.body.from, req.body.to, req.body.account, req.body.ammount, Date.now()], function (err, rows) {
+          if (err) {
+            res.status(500).json({
+              status: 'Something went wrong.'
+            });
+            throw err;
+          } else {
+            res.status(201).json({
+              status: 'success',
+            });
+          }
+        });
+      }
+    })
+  } catch (err) {
+    res.status(401).json({
+      status: 'Token expired, login again.',
+    });
+  }
 });
 
 ///////////////////////////////////////
@@ -116,33 +118,35 @@ app.post('/submit', (req, res, next) => {
 ///////////////////////////////////////
 
 app.post('/list', (req, res, next) => {
-  jwt.verify(req.headers.authorization, 'zagor', function (err, decoded) {
-    if (req.body.author == decoded.user) {
-      connection.query('SELECT * FROM przelewy WHERE nadawca = ?', req.body.author, function (err, rows) {
-        if (err) {
-          res.status(500).json({
-            status: 'Something went wrong.'
-          });
-          throw err;
-        } else if (rows != undefined) {
-          res.status(200).json({
-            status: 'success',
-            list: rows
-          });
-        } else {
-          res.status(200).json({
-            status: 'succes',
-            rows: ''
-          });
-        }
-      });
-    } else {
-      res.status(401).json({
-        status: 'Token expired, login again.',
-        rows: ''
-      });
-    }
-  });
+  try {
+    jwt.verify(req.headers.authorization, 'zagor', function (err, decoded) {
+      if (req.body.author == decoded.user) {
+        connection.query('SELECT * FROM przelewy WHERE nadawca = ?', req.body.author, function (err, rows) {
+          if (err) {
+            res.status(500).json({
+              status: 'Something went wrong.'
+            });
+            throw err;
+          } else if (rows != undefined) {
+            res.status(200).json({
+              status: 'success',
+              list: rows
+            });
+          } else {
+            res.status(200).json({
+              status: 'succes',
+              rows: ''
+            });
+          }
+        });
+      }
+    });
+  } catch (err) {
+    res.status(401).json({
+      status: 'Token expired, login again.',
+      rows: ''
+    });
+  }
 });
 
 ///////////////////////////////////////
@@ -150,28 +154,30 @@ app.post('/list', (req, res, next) => {
 ///////////////////////////////////////
 
 app.post('/summary', (req, res, next) => {
-  jwt.verify(req.headers.authorization, 'zagor', function (err, decoded) {
-    if (req.body.author == decoded.user) {
-      connection.query('SELECT * FROM przelewy WHERE nadawca = ? and id = ?', [req.body.author, req.body.id], function (err, rows) {
-        if (err) {
-          res.status(500).json({
-            status: 'Something went wrong.'
-          });
-          throw err;
-        } else if (rows[0] != undefined) {
-          res.status(200).json({
-            status: 'success',
-            data: rows[0]
-          });
-        }
-      });
-    } else {
-      res.status(401).json({
-        status: 'Token expired, login again.',
-        data: ''
-      });
-    }
-  });
+  try {
+    jwt.verify(req.headers.authorization, 'zagor', function (err, decoded) {
+      if (req.body.author == decoded.user) {
+        connection.query('SELECT * FROM przelewy WHERE nadawca = ? and id = ?', [req.body.author, req.body.id], function (err, rows) {
+          if (err) {
+            res.status(500).json({
+              status: 'Something went wrong.'
+            });
+            throw err;
+          } else if (rows[0] != undefined) {
+            res.status(200).json({
+              status: 'success',
+              data: rows[0]
+            });
+          }
+        });
+      }
+    });
+  } catch (err) {
+    res.status(401).json({
+      status: 'Token expired, login again.',
+      data: ''
+    });
+  }
 });
 
 ///////////////////////////////////////

@@ -2,9 +2,12 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-var mysql = require('mysql')
+const helmet = require('helmet');
+const bcrypt = require('bcrypt');
+var mysql = require('mysql');
 var jwt = require('jsonwebtoken');
 const app = express();
+app.use(helmet());
 
 ///////////////////////////////////////
 //  DATABASE
@@ -34,15 +37,25 @@ app.use(cookieParser());
 app.use(cors());
 
 ///////////////////////////////////////
+//  BCRYTP
+///////////////////////////////////////
+
+const saltRounds = 10000;
+
+///////////////////////////////////////
 //  REGISTER
 ///////////////////////////////////////
 
 app.post('/register', (req, res, next) => {
   connection.query('SELECT * FROM users WHERE email = ?', req.body.email, function (err, user) {
     if (user[0] == undefined) {
-      connection.query('INSERT INTO users (email, password) VALUES (? , ?)', [req.body.email, req.body.password], function (err, rows) {
-        res.status(201).json({
-          status: 'success',
+      bcrypt.genSalt(saltRounds, function (err, salt) {
+        bcrypt.hash(req.body.password, salt, function (err, hash) {
+          connection.query('INSERT INTO users (email, password) VALUES (? , ?)', [req.body.email, hash], function (err, rows) {
+            res.status(201).json({
+              status: 'success',
+            });
+          });
         });
       });
     } else if (err) {
@@ -62,23 +75,26 @@ app.post('/register', (req, res, next) => {
 ///////////////////////////////////////
 
 app.post('/login', (req, res, next) => {
+
   connection.query('SELECT * FROM users WHERE email = ?', req.body.email, function (err, rows) {
     if (rows[0] != undefined) {
-      if (req.body.password == rows[0].password) {
-        var token = jwt.sign({
-          user: req.body.email
-        }, 'zagor', {
-          expiresIn: '300000'
-        });
-        res.status(200).json({
-          status: 'success',
-          token: token
-        });
-      } else {
-        res.status(401).json({
-          status: 'Wrong password.'
-        });
-      }
+      bcrypt.compare(req.body.password, rows[0].password, function (err, isCorrect) {
+        if (isCorrect == true) {
+          var token = jwt.sign({
+            user: req.body.email
+          }, 'zagor', {
+            expiresIn: '300000'
+          });
+          res.status(200).json({
+            status: 'success',
+            token: token
+          });
+        } else {
+          res.status(401).json({
+            status: 'Wrong password.'
+          });
+        }
+      });
     } else {
       res.status(401).json({
         status: 'Wrong email.'
@@ -191,20 +207,23 @@ app.post('/summary', (req, res, next) => {
 ///////////////////////////////////////
 
 app.post('/reset', (req, res, next) => {
-
-  connection.query('UPDATE users SET password = ? WHERE email = ?', [req.body.password, req.body.email], function (err, rows) {
-    if (rows.changedRows != 0) {
-      res.status(200).json({
-        status: 'success',
+  bcrypt.genSalt(saltRounds, function (err, salt) {
+    bcrypt.hash(req.body.password, salt, function (err, hash) {
+      connection.query('UPDATE users SET password = ? WHERE email = ?', [hash, req.body.email], function (err, rows) {
+        if (rows.changedRows != 0) {
+          res.status(200).json({
+            status: 'success',
+          });
+        } else {
+          res.status(401).json({
+            status: 'Wrong email or password was used.'
+          });
+        }
+        if (err) {
+          throw err;
+        }
       });
-    } else {
-      res.status(401).json({
-        status: 'Wrong email or password was used.'
-      });
-    }
-    if (err) {
-      throw err;
-    }
+    });
   });
 });
 

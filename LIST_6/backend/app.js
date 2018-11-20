@@ -38,17 +38,23 @@ app.use(cors());
 ///////////////////////////////////////
 
 app.post('/register', (req, res, next) => {
-  connection.query('INSERT INTO users (email, password) VALUES (? , ?)', [req.body.email, req.body.password], function (err, rows) {
-    res.status(201).json({
-      status: 'success',
-    });
-    if (err) {
+  connection.query('SELECT * FROM users WHERE email = ?', req.body.email, function (err, user) {
+    if (user[0] == undefined) {
+      connection.query('INSERT INTO users (email, password) VALUES (? , ?)', [req.body.email, req.body.password], function (err, rows) {
+        res.status(201).json({
+          status: 'success',
+        });
+      });
+    } else if (err) {
       res.status(500).json({
         status: 'Something went wrong.'
       });
-      throw err;
+    } else {
+      res.status(401).json({
+        status: 'Email exist.'
+      });
     }
-  })
+  });
 });
 
 ///////////////////////////////////////
@@ -181,7 +187,7 @@ app.post('/summary', (req, res, next) => {
 });
 
 ///////////////////////////////////////
-//  RESET
+//  RESET PASSWORD
 ///////////////////////////////////////
 
 app.post('/reset', (req, res, next) => {

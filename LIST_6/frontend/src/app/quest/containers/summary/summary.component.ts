@@ -5,7 +5,7 @@ import * as fromThemes from '../../../state/themes/reducers';
 import { AppState } from 'src/app/state/app/app.interface';
 import * as fromAuth from '../../../state/auth/reducers/';
 import { InfoService, SnackbarService } from 'src/app/shared/services';
-
+import * as AuthActions from '../../../state/auth/actions/';
 
 @Component({
   selector: 'app-summary',
@@ -38,7 +38,12 @@ export class SummaryComponent implements OnInit {
         response => {
           this.infoSevice.showInfo('You were succesfully przlewed.');
         },
-        error => this.snackBar.showMessage(error.error.status || 'No server connection'));
+        error => {
+          if (error.status === 401) {
+            this.store.dispatch(new AuthActions.Logout());
+          }
+          this.snackBar.showMessage(error.error.status || 'No server connection');
+        });
   }
 
   fake() {
@@ -47,6 +52,11 @@ export class SummaryComponent implements OnInit {
         response => {
           this.infoSevice.showInfo('You were succesfully przlewed.');
         },
-        error => this.snackBar.showMessage(error.error.status || 'No server connection'));
+        error => {
+          if (error.status === 401) {
+            this.store.dispatch(new AuthActions.Logout());
+          }
+          this.snackBar.showMessage(error.error.status || 'No server connection');
+        });
   }
 }

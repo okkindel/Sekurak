@@ -37,10 +37,11 @@ app.use(cookieParser());
 app.use(cors());
 
 ///////////////////////////////////////
-//  BCRYTP
+//  BCRYTP AND JWT
 ///////////////////////////////////////
 
 const saltRounds = 10000;
+const timeOfToken = '10000';
 
 ///////////////////////////////////////
 //  REGISTER
@@ -83,7 +84,7 @@ app.post('/login', (req, res, next) => {
           var token = jwt.sign({
             user: req.body.email
           }, 'zagor', {
-            expiresIn: '300000'
+            expiresIn: timeOfToken
           });
           res.status(200).json({
             status: 'success',
@@ -130,7 +131,7 @@ app.post('/submit', (req, res, next) => {
     })
   } catch (err) {
     res.status(401).json({
-      status: 'Token expired, login again.',
+      status: 'Token expired, you were logged out.',
     });
   }
 });
@@ -165,7 +166,7 @@ app.post('/list', (req, res, next) => {
     });
   } catch (err) {
     res.status(401).json({
-      status: 'Token expired, login again.',
+      status: 'Token expired, you were logged out.',
       rows: ''
     });
   }
@@ -196,7 +197,7 @@ app.post('/summary', (req, res, next) => {
     });
   } catch (err) {
     res.status(401).json({
-      status: 'Token expired, login again.',
+      status: 'Token expired, you were logged out.',
       data: ''
     });
   }

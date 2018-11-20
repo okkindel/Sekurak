@@ -41,7 +41,7 @@ app.use(cors());
 ///////////////////////////////////////
 
 const saltRounds = 10000;
-const timeOfToken = '10000';
+const timeOfToken = '100000';
 
 ///////////////////////////////////////
 //  REGISTER

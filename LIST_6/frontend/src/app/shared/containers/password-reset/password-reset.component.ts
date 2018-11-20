@@ -10,6 +10,7 @@ import { PasswordService, InfoService, SnackbarService } from '../../services';
 })
 export class PasswordResetComponent implements OnInit {
 
+  disabled = false;
   message: String;
   theme: String;
 
@@ -30,11 +31,15 @@ export class PasswordResetComponent implements OnInit {
   validate = () => this.email !== '' && this.pass !== '';
 
   submit() {
+    this.disabled = true;
     this.service.resetPassword(this.email, this.pass)
       .subscribe(
         response => {
           this.infoSevice.showInfo('Your password is changed.');
         },
-        error => this.snackBar.showMessage(error.error.status || 'No server connection'));
+        error => {
+          this.disabled = false;
+          this.snackBar.showMessage(error.error.status || 'No server connection');
+        });
   }
 }

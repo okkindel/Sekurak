@@ -2,7 +2,8 @@
 
   <mat-card class="form">
     <app-register 
-      (register)="register($event)">
+      (register)="register($event)"
+      [disabled]="isPending$ | async">
     </app-register>
   </mat-card>
 

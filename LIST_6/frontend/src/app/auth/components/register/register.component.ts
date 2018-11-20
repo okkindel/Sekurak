@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { ICredentials } from '../../models';
 @Component({
   selector: 'app-register',
@@ -9,6 +9,7 @@ export class RegisterComponent {
 
   re_password: String = '';
 
+  @Input() disabled = false;
   @Output() register: EventEmitter<ICredentials> = new EventEmitter();
 
   public credentials: ICredentials = {

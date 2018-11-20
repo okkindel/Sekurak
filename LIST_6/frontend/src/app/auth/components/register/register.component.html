@@ -39,5 +39,6 @@
 
   <button mat-raised-button color="primary" type="submit" [disabled]="!validate()">
     Register
+    <mat-progress-bar *ngIf="disabled" mode="indeterminate"></mat-progress-bar>
   </button>
 </form>

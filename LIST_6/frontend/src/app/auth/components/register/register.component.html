@@ -37,7 +37,7 @@
   
   <div align="center" *ngIf="!validate_password()"> <small> Passwords do not match.</small> <br><br> </div>
 
-  <button mat-raised-button color="primary" type="submit" [disabled]="!validate()">
+  <button mat-raised-button color="primary" type="submit" [disabled]="!validate() || disabled">
     Register
     <mat-progress-bar *ngIf="disabled" mode="indeterminate"></mat-progress-bar>
   </button>

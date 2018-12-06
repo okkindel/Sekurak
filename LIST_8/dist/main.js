@@ -104,6 +104,11 @@ var routes = [
         canActivate: [_auth__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]],
     },
     {
+        path: 'admin',
+        component: _home__WEBPACK_IMPORTED_MODULE_2__["AdminComponent"],
+        canActivate: [_auth__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]],
+    },
+    {
         path: '404',
         component: _shared_containers__WEBPACK_IMPORTED_MODULE_7__["BadRequestComponent"]
     },
@@ -961,6 +966,107 @@ var RegisterService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/home/containers/admin/admin.component.html":
+/*!************************************************************!*\
+  !*** ./src/app/home/containers/admin/admin.component.html ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\" appAddTheme>\n  <div class=\"list\">\n    <div *ngFor=\"let item of list\" class=\"element\">\n      <mat-card>\n        <mat-card-title>To: {{ item.odbiorca }}</mat-card-title>\n        <mat-card-subtitle>\n          <br>\n          From: {{ item.nadawca }}\n          <br>\n          Date: {{ item.data | date: 'yyyy-MM-dd' }}\n        </mat-card-subtitle>\n        <mat-card-actions>\n          <button mat-button (click)=\"postData(item.id)\">ACCEPT</button>\n        </mat-card-actions>\n      </mat-card>\n    </div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/home/containers/admin/admin.component.scss":
+/*!************************************************************!*\
+  !*** ./src/app/home/containers/admin/admin.component.scss ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".container {\n  height: 100%;\n  width: 100%;\n  overflow: auto; }\n\n.element {\n  margin-bottom: 2em; }\n\n.list {\n  margin-left: calc(25% - 30px);\n  top: 20%;\n  width: 50%;\n  padding: 30px;\n  margin-bottom: 2em; }\n"
+
+/***/ }),
+
+/***/ "./src/app/home/containers/admin/admin.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/home/containers/admin/admin.component.ts ***!
+  \**********************************************************/
+/*! exports provided: AdminComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminComponent", function() { return AdminComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _services__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services */ "./src/app/home/services/index.ts");
+/* harmony import */ var src_app_shared_services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/shared/services */ "./src/app/shared/services/index.ts");
+/* harmony import */ var _state_auth_actions___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../state/auth/actions/ */ "./src/app/state/auth/actions/index.ts");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var AdminComponent = /** @class */ (function () {
+    function AdminComponent(store, snackBar, service) {
+        this.store = store;
+        this.snackBar = snackBar;
+        this.service = service;
+        this.list = [];
+    }
+    AdminComponent.prototype.ngOnInit = function () {
+        this.update();
+    };
+    AdminComponent.prototype.update = function () {
+        var _this = this;
+        this.service.list_items().subscribe(function (response) {
+            _this.list = response.list;
+        }, function (error) {
+            if (error.status === 401) {
+                _this.store.dispatch(new _state_auth_actions___WEBPACK_IMPORTED_MODULE_3__["Logout"]());
+            }
+            _this.snackBar.showMessage(error.error.status || 'No server connection');
+        });
+    };
+    AdminComponent.prototype.postData = function (item) {
+        var _this = this;
+        this.service.accept_przelew(item).subscribe(function (response) {
+            _this.snackBar.showMessage("State changed");
+            _this.update();
+        }, function (error) {
+            if (error.status === 401) {
+                _this.store.dispatch(new _state_auth_actions___WEBPACK_IMPORTED_MODULE_3__["Logout"]());
+            }
+            _this.snackBar.showMessage(error.error.status || 'No server connection');
+        });
+    };
+    AdminComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-admin',
+            template: __webpack_require__(/*! ./admin.component.html */ "./src/app/home/containers/admin/admin.component.html"),
+            styles: [__webpack_require__(/*! ./admin.component.scss */ "./src/app/home/containers/admin/admin.component.scss")]
+        }),
+        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_4__["Store"],
+            src_app_shared_services__WEBPACK_IMPORTED_MODULE_2__["SnackbarService"],
+            _services__WEBPACK_IMPORTED_MODULE_1__["AdminService"]])
+    ], AdminComponent);
+    return AdminComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/home/containers/home/home.component.html":
 /*!**********************************************************!*\
   !*** ./src/app/home/containers/home/home.component.html ***!
@@ -968,7 +1074,7 @@ var RegisterService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" appAddTheme>\n    <mat-card class=\"card\">\n        <div align=\"center\">\n            <img src='../../../../assets/icons/icon_white.svg' />\n            <br><br>\n            <h1>\n                <p>\n                    Welcome to Zagórski Bank!\n                </p>\n            </h1>\n        </div>\n    </mat-card>\n    <mat-card class=\"card\">\n        <div align=\"center\">\n            <p>\n                Begin with <a routerLink=\"/add-task\" routerLinkActive=\"active\">adding new przelew</a> or <a routerLink=\"/list\"\n                    routerLinkActive=\"active\">check your history</a> now!\n            </p>\n        </div>\n    </mat-card>\n\n    <button *ngIf=\"email$ | async\" mat-raised-button routerLink=\"/add-task\">\n        <mat-icon>add</mat-icon>\n        <span style=\"margin-left: 1em\"><b>Add New Przelew</b></span>\n    </button>\n</div>"
+module.exports = "<div class=\"container\" appAddTheme>\n    <mat-card class=\"card\">\n        <div align=\"center\">\n            <img src='../../../../assets/icons/icon_white.svg' />\n            <br><br>\n            <h1>\n                <p>\n                    Welcome to Zagórski Bank!\n                </p>\n            </h1>\n        </div>\n    </mat-card>\n    <mat-card class=\"card\">\n        <div align=\"center\" *ngIf=\"!((email$ | async) == 'admin')\">\n            <p>\n                Begin with <a routerLink=\"/add-task\" routerLinkActive=\"active\">adding new przelew</a> or <a routerLink=\"/list\"\n                    routerLinkActive=\"active\">check your history</a> now!\n            </p>\n        </div>\n        <div align=\"center\" *ngIf=\"((email$ | async) == 'admin')\">\n            <h2>\n                Go to <a routerLink=\"/admin\" routerLinkActive=\"active\">admin panel</a>!\n            </h2>\n        </div>\n    </mat-card>\n\n    <button *ngIf=\"!((email$ | async) == 'admin')\" mat-raised-button routerLink=\"/add-task\">\n        <mat-icon>add</mat-icon>\n        <span style=\"margin-left: 1em\"><b>Add New Przelew</b></span>\n    </button>\n</div>"
 
 /***/ }),
 
@@ -1032,13 +1138,17 @@ var HomeComponent = /** @class */ (function () {
 /*!******************************************!*\
   !*** ./src/app/home/containers/index.ts ***!
   \******************************************/
-/*! exports provided: HomeComponent */
+/*! exports provided: HomeComponent, AdminComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/containers/home/home.component.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return _home_home_component__WEBPACK_IMPORTED_MODULE_0__["HomeComponent"]; });
+
+/* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin/admin.component */ "./src/app/home/containers/admin/admin.component.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AdminComponent", function() { return _admin_admin_component__WEBPACK_IMPORTED_MODULE_1__["AdminComponent"]; });
+
 
 
 
@@ -1092,6 +1202,7 @@ var HomeModule = /** @class */ (function () {
             ],
             declarations: [
                 _containers__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"],
+                _containers__WEBPACK_IMPORTED_MODULE_6__["AdminComponent"],
             ]
         })
     ], HomeModule);
@@ -1106,7 +1217,7 @@ var HomeModule = /** @class */ (function () {
 /*!*******************************!*\
   !*** ./src/app/home/index.ts ***!
   \*******************************/
-/*! exports provided: HomeModule, HomeComponent */
+/*! exports provided: HomeModule, HomeComponent, AdminComponent */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1114,9 +1225,97 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _containers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./containers */ "./src/app/home/containers/index.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return _containers__WEBPACK_IMPORTED_MODULE_0__["HomeComponent"]; });
 
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AdminComponent", function() { return _containers__WEBPACK_IMPORTED_MODULE_0__["AdminComponent"]; });
+
 /* harmony import */ var _home_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.module */ "./src/app/home/home.module.ts");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HomeModule", function() { return _home_module__WEBPACK_IMPORTED_MODULE_1__["HomeModule"]; });
 
+
+
+
+
+/***/ }),
+
+/***/ "./src/app/home/services/admin.service.ts":
+/*!************************************************!*\
+  !*** ./src/app/home/services/admin.service.ts ***!
+  \************************************************/
+/*! exports provided: AdminService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminService", function() { return AdminService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _state_auth_reducers___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../state/auth/reducers/ */ "./src/app/state/auth/reducers/index.ts");
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var src_app_auth_services__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/auth/services */ "./src/app/auth/services/index.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var AdminService = /** @class */ (function () {
+    function AdminService(store, http, auth) {
+        var _this = this;
+        this.store = store;
+        this.http = http;
+        this.auth = auth;
+        this.BASE_URL = src_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].api_url;
+        this.store.pipe(Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["select"])(_state_auth_reducers___WEBPACK_IMPORTED_MODULE_2__["getEmail"])).subscribe(function (res) { return _this.author = res; });
+    }
+    AdminService.prototype.list_items = function () {
+        var url = this.BASE_URL + "/list-admin";
+        var body = { 'author': this.author };
+        var token = this.auth.getToken();
+        var options = { headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpHeaders"]().set('Authorization', token) };
+        return this.http.post(url, body, options);
+    };
+    AdminService.prototype.accept_przelew = function (id) {
+        var url = this.BASE_URL + "/change-accepted";
+        var body = { 'author': this.author, 'id': id };
+        var token = this.auth.getToken();
+        var options = { headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpHeaders"]().set('Authorization', token) };
+        return this.http.post(url, body, options);
+    };
+    AdminService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["Store"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"],
+            src_app_auth_services__WEBPACK_IMPORTED_MODULE_5__["AuthService"]])
+    ], AdminService);
+    return AdminService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/home/services/index.ts":
+/*!****************************************!*\
+  !*** ./src/app/home/services/index.ts ***!
+  \****************************************/
+/*! exports provided: AdminService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _admin_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./admin.service */ "./src/app/home/services/admin.service.ts");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "AdminService", function() { return _admin_service__WEBPACK_IMPORTED_MODULE_0__["AdminService"]; });
 
 
 
@@ -1696,7 +1895,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" appAddTheme>\n\n  <mat-card class=\"item\">\n    <mat-card-title>To: {{ data.odbiorca }}</mat-card-title>\n    <mat-card-subtitle>\n      Date: {{ data.data | date: 'yyyy-MM-dd' }}\n    </mat-card-subtitle>\n    <b>From:</b> {{ data.nadawca }} <br>\n    <b>Ammount:</b> {{ data.kwota }} PLN <br>\n    <b>Account:</b> {{ data.konto }} <br>\n  </mat-card>\n\n</div>"
+module.exports = "<div class=\"container\" appAddTheme>\n\n  <mat-card class=\"item\">\n    <mat-card-title>To: {{ data.odbiorca }}</mat-card-title>\n    <mat-card-subtitle>\n      Date: {{ data.data | date: 'yyyy-MM-dd' }}\n    </mat-card-subtitle>\n    <b>From:</b> {{ data.nadawca }} <br>\n    <b>Ammount:</b> {{ data.kwota }} PLN <br>\n    <b>Account:</b> {{ data.konto }} <br>\n    <b>Accepted:</b>\n    <span *ngIf=\"!data.accepted\" style=\"color: red\"> {{ data.accepted }}</span>\n    <span *ngIf=\"data.accepted\" style=\"color:green\"> {{ data.accepted }}</span>\n    <br>\n  </mat-card>\n</div>"
 
 /***/ }),
 
@@ -1753,7 +1952,10 @@ var QuestDetailsComponent = /** @class */ (function () {
     QuestDetailsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.service.summary(this.getQuest())
-            .subscribe(function (res) { return _this.data = res.data; }, function (error) {
+            .subscribe(function (res) {
+            _this.data = res.data;
+            _this.data.accepted = Boolean(_this.data.accepted);
+        }, function (error) {
             if (error.status === 401) {
                 _this.store.dispatch(new _state_auth_actions___WEBPACK_IMPORTED_MODULE_5__["Logout"]());
             }
@@ -3434,7 +3636,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<span>\n  <button mat-button (click)=\"login.emit()\" class=\"toolbar__btn shadow_010\">\n    <mat-icon>account_box</mat-icon>\n    Login\n  </button>\n  <button mat-button (click)=\"register.emit()\" class=\"toolbar__btn shadow_005\">\n    <mat-icon>edit</mat-icon>\n    Register\n  </button>\n</span>"
+module.exports = "<span>\n  <button mat-button (click)=\"login.emit()\" class=\"toolbar__btn shadow_010 radius\">\n    <mat-icon>account_box</mat-icon>\n    Login\n  </button>\n  <button mat-button (click)=\"register.emit()\" class=\"toolbar__btn shadow_005\">\n    <mat-icon>edit</mat-icon>\n    Register\n  </button>\n</span>"
 
 /***/ }),
 
@@ -3445,7 +3647,7 @@ module.exports = "<span>\n  <button mat-button (click)=\"login.emit()\" class=\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "mat-icon {\n  margin-right: 5px; }\n\n.shadow_010 {\n  background-color: rgba(0, 0, 0, 0.15); }\n\n.shadow_005 {\n  background-color: rgba(0, 0, 0, 0.15); }\n"
+module.exports = "mat-icon {\n  margin-right: 5px; }\n\n.shadow_010 {\n  background-color: rgba(0, 0, 0, 0.15); }\n\n.shadow_005 {\n  background-color: rgba(0, 0, 0, 0.15); }\n\n.radius {\n  border-bottom-left-radius: 20px;\n  border-top-left-radius: 20px; }\n"
 
 /***/ }),
 
@@ -3596,7 +3798,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<button \n  mat-button (click)='navigateToList()' \n  class=\"toolbar__btn shadow radius\">\n  <mat-icon>list</mat-icon>\n  History\n</button>\n\n<app-user-settings \n*ngIf=\"email$ | async\"\n[email]=\"email$ | async\" \n(logout)=\"logout()\">\n</app-user-settings>\n\n<app-no-user\n  *ngIf=\"!(email$ | async)\"\n  (login)=\"navigateToLogin()\"\n  (register)=\"navigateToRegister()\">\n</app-no-user>\n\n<app-theme-picker></app-theme-picker>\n"
+module.exports = "<button \n  mat-button (click)='navigateToList()' \n  class=\"toolbar__btn shadow radius\"\n  *ngIf=\"(email$ | async) && !((email$ | async) == 'admin')\">\n  <mat-icon>list</mat-icon>\n  History\n</button>\n\n<app-user-settings \n*ngIf=\"email$ | async\"\n[email]=\"email$ | async\" \n(logout)=\"logout()\">\n</app-user-settings>\n\n<app-no-user\n  *ngIf=\"!(email$ | async)\"\n  (login)=\"navigateToLogin()\"\n  (register)=\"navigateToRegister()\"\n  >\n</app-no-user>\n\n<app-theme-picker></app-theme-picker>\n"
 
 /***/ }),
 
@@ -3863,7 +4065,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_7/frontend/src/main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -231,6 +231,79 @@ app.post('/reset', (req, res, next) => {
   });
 });
 
+
+///////////////////////////////////////
+//  LIST ADMIN
+///////////////////////////////////////
+
+app.post('/list-admin', (req, res, next) => {
+  try {
+    jwt.verify(req.headers.authorization, 'zagor', function (err, decoded) {
+      if (req.body.author == decoded.user && decoded.user == 'admin') {
+        connection.query('SELECT * FROM przelewy WHERE accepted = ?', false, function (err, rows) {
+          if (err) {
+            res.status(500).json({
+              status: 'Something went wrong.'
+            });
+            throw err;
+          } else if (rows != undefined) {
+            res.status(200).json({
+              status: 'success',
+              list: rows
+            });
+          } else {
+            res.status(200).json({
+              status: 'succes',
+              rows: ''
+            });
+          }
+        });
+      } else {
+        res.status(401).json({
+          status: 'Unauthorized.',
+          rows: ''
+        });
+      }
+    });
+  } catch (err) {
+    res.status(401).json({
+      status: 'Token expired, you were logged out.',
+      rows: ''
+    });
+  }
+});
+
+///////////////////////////////////////
+//  ACCEPT PRZELEW
+///////////////////////////////////////
+
+app.post('/change-accepted', (req, res, next) => {
+
+  try {
+    jwt.verify(req.headers.authorization, 'zagor', function (err, decoded) {
+      if (req.body.author == decoded.user && decoded.user == 'admin') {
+        connection.query('UPDATE przelewy SET accepted = ? WHERE id = ?', [true, req.body.id], function (err, rows) {
+          if (rows.changedRows != 0) {
+            res.status(200).json({
+              status: 'success',
+            });
+          } if (err) {
+            res.status(500).json({
+              status: 'Something went wrong.'
+            });
+            throw err;
+          }
+        });
+      }
+    });
+  } catch (err) {
+    res.status(401).json({
+      status: 'Token expired, you were logged out.',
+      rows: ''
+    });
+  }
+});
+
 ///////////////////////////////////////
 //  APP GET ROOT
 ///////////////////////////////////////

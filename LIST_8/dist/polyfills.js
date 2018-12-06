@@ -5474,7 +5474,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/src/polyfills.ts */"./src/polyfills.ts");
+module.exports = __webpack_require__(/*! /home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_7/frontend/src/polyfills.ts */"./src/polyfills.ts");
 
 
 /***/ })

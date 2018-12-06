@@ -1,0 +1,31 @@
+<div class="container" appAddTheme>
+    <mat-card class="card">
+        <div align="center">
+            <img src='../../../../assets/icons/icon_white.svg' />
+            <br><br>
+            <h1>
+                <p>
+                    Welcome to Zagórski Bank!
+                </p>
+            </h1>
+        </div>
+    </mat-card>
+    <mat-card class="card">
+        <div align="center" *ngIf="!((email$ | async) == 'admin')">
+            <p>
+                Begin with <a routerLink="/add-task" routerLinkActive="active">adding new przelew</a> or <a routerLink="/list"
+                    routerLinkActive="active">check your history</a> now!
+            </p>
+        </div>
+        <div align="center" *ngIf="((email$ | async) == 'admin')">
+            <h2>
+                Go to <a routerLink="/admin" routerLinkActive="active">admin panel</a>!
+            </h2>
+        </div>
+    </mat-card>
+
+    <button *ngIf="!((email$ | async) == 'admin')" mat-raised-button routerLink="/add-task">
+        <mat-icon>add</mat-icon>
+        <span style="margin-left: 1em"><b>Add New Przelew</b></span>
+    </button>
+</div>

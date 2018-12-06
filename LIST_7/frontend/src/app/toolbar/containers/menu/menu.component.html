@@ -1,0 +1,22 @@
+<button 
+  mat-button (click)='navigateToList()' 
+  class="toolbar__btn shadow radius"
+  *ngIf="(email$ | async) && !((email$ | async) == 'admin')">
+  <mat-icon>list</mat-icon>
+  History
+</button>
+
+<app-user-settings 
+*ngIf="email$ | async"
+[email]="email$ | async" 
+(logout)="logout()">
+</app-user-settings>
+
+<app-no-user
+  *ngIf="!(email$ | async)"
+  (login)="navigateToLogin()"
+  (register)="navigateToRegister()"
+  >
+</app-no-user>
+
+<app-theme-picker></app-theme-picker>

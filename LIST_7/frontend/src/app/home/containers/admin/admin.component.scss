@@ -1,0 +1,17 @@
+.container {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.element {
+    margin-bottom: 2em;
+}
+
+.list {
+    margin-left: calc(25% - 30px);
+    top: 20%;
+    width: 50%;
+    padding: 30px;
+    margin-bottom: 2em;
+}

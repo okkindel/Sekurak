@@ -1,0 +1,20 @@
+HTTP/1.1 400 Bad Request
+X-Powered-By: Express
+Content-Security-Policy: default-src 'self'
+X-Content-Type-Options: nosniff
+Content-Type: text/html; charset=utf-8
+Content-Length: 2638
+Date: Thu, 06 Dec 2018 12:45:38 GMT
+Connection: keep-alive
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>URIError: Failed to decode param &#39;/webpack-dev-server.js/f0%8D%E9%D3U.js/&#39;<br> &nbsp; &nbsp;at decodeURIComponent (&lt;anonymous&gt;)<br> &nbsp; &nbsp;at decode_param (/home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/router/layer.js:172:12)<br> &nbsp; &nbsp;at Layer.match (/home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/router/layer.js:123:27)<br> &nbsp; &nbsp;at matchLayer (/home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/router/index.js:574:18)<br> &nbsp; &nbsp;at next (/home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/router/index.js:220:15)<br> &nbsp; &nbsp;at expressInit (/home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/middleware/init.js:40:5)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at trim_prefix (/home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/router/index.js:317:13)<br> &nbsp; &nbsp;at /home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/router/index.js:284:7<br> &nbsp; &nbsp;at Function.process_params (/home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/router/index.js:335:12)<br> &nbsp; &nbsp;at next (/home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/router/index.js:275:10)<br> &nbsp; &nbsp;at query (/home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/middleware/query.js:45:5)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at trim_prefix (/home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/router/index.js:317:13)<br> &nbsp; &nbsp;at /home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/router/index.js:284:7<br> &nbsp; &nbsp;at Function.process_params (/home/okkindel/Dokumenty/STUDIES/SEMESTR 5/Bezpieczeństwo/LIST_6/frontend/node_modules/express/lib/router/index.js:335:12)</pre>
+</body>
+</html>
+){req

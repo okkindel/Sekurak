@@ -1,0 +1,5 @@
+var child = [
+  { 'dupe': true, 'type': 4, 'name': 'bad-request', 'dir': 'c0', 'linked': 2, 'url': 'http://10.182.95.138:4200/main.js/src/app/shared/containers/bad-request/', 'fetched': true, 'code': 404, 'len': 185, 'decl_mime': 'text/html', 'sniff_mime': '[none]', 'cset': 'utf-8', 'missing': true, 'csens': false, 'child_cnt': 0, 'issue_cnt': [ 0, 0, 0, 0, 0 ], 'sig': 0xfffbffff },
+  { 'dupe': true, 'type': 4, 'name': 'info', 'dir': 'c1', 'linked': 2, 'url': 'http://10.182.95.138:4200/main.js/src/app/shared/containers/info/', 'fetched': true, 'code': 404, 'len': 178, 'decl_mime': 'text/html', 'sniff_mime': '[none]', 'cset': 'utf-8', 'missing': true, 'csens': false, 'child_cnt': 0, 'issue_cnt': [ 0, 0, 0, 0, 0 ], 'sig': 0xfffbffff },
+  { 'dupe': true, 'type': 4, 'name': 'password-reset', 'dir': 'c2', 'linked': 2, 'url': 'http://10.182.95.138:4200/main.js/src/app/shared/containers/password-reset/', 'fetched': true, 'code': 404, 'len': 188, 'decl_mime': 'text/html', 'sniff_mime': '[none]', 'cset': 'utf-8', 'missing': true, 'csens': false, 'child_cnt': 0, 'issue_cnt': [ 0, 0, 0, 0, 0 ], 'sig': 0xfffbffff }
+];

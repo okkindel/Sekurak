@@ -1,0 +1,9 @@
+GET /vendor.js/node_modules/@angular/cdk/esm5/bidi.es5.js HTTP/1.1
+Host: 10.182.95.138:4200
+Accept-Encoding: gzip
+Connection: keep-alive
+User-Agent: Mozilla/5.0 SF/2.10b
+Range: bytes=0-399999
+Referer: http://10.182.95.138/
+Authorization: Basic bWFjaWVqQG1hY2llai5tYWNpZWo6VmFyZGVu
+

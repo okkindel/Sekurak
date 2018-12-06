@@ -1,0 +1,5 @@
+var child = [
+  { 'dupe': true, 'type': 4, 'name': 'driver', 'dir': 'c0', 'linked': 2, 'url': 'http://10.182.95.138:4200/__webpack_dev_server__/driver/', 'fetched': true, 'code': 404, 'len': 169, 'decl_mime': 'text/html', 'sniff_mime': '[none]', 'cset': 'utf-8', 'missing': true, 'csens': false, 'child_cnt': 0, 'issue_cnt': [ 0, 0, 0, 0, 0 ], 'sig': 0xfffbffff },
+  { 'dupe': true, 'type': 4, 'name': 'live.bundle.js', 'dir': 'c1', 'linked': 2, 'url': 'http://10.182.95.138:4200/__webpack_dev_server__/live.bundle.js/', 'fetched': true, 'code': 200, 'len': 167926, 'decl_mime': 'application/javascript', 'sniff_mime': 'text/plain', 'cset': '[none]', 'missing': false, 'csens': false, 'child_cnt': 0, 'issue_cnt': [ 0, 0, 0, 0, 0 ], 'sig': 0x9e1eaa61 },
+  { 'dupe': true, 'type': 4, 'name': 'utils', 'dir': 'c2', 'linked': 2, 'url': 'http://10.182.95.138:4200/__webpack_dev_server__/utils/', 'fetched': true, 'code': 404, 'len': 168, 'decl_mime': 'text/html', 'sniff_mime': '[none]', 'cset': 'utf-8', 'missing': true, 'csens': false, 'child_cnt': 0, 'issue_cnt': [ 0, 0, 0, 0, 0 ], 'sig': 0xfffbffff }
+];

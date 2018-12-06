@@ -1,0 +1,5 @@
+var child = [
+  { 'dupe': false, 'type': 4, 'name': 'node_modules', 'dir': 'c0', 'linked': 1, 'url': 'http://10.182.95.138:4200/styles.js/node_modules/', 'fetched': true, 'code': 404, 'len': 162, 'decl_mime': 'text/html', 'sniff_mime': '[none]', 'cset': 'utf-8', 'missing': true, 'csens': false, 'child_cnt': 11, 'issue_cnt': [ 0, 0, 0, 0, 0 ], 'sig': 0xef7ddeea },
+  { 'dupe': true, 'type': 4, 'name': 'src', 'dir': 'c1', 'linked': 1, 'url': 'http://10.182.95.138:4200/styles.js/src/', 'fetched': true, 'code': 404, 'len': 153, 'decl_mime': 'text/html', 'sniff_mime': '[none]', 'cset': 'utf-8', 'missing': true, 'csens': false, 'child_cnt': 0, 'issue_cnt': [ 0, 0, 0, 0, 0 ], 'sig': 0x9b890a5 },
+  { 'dupe': true, 'type': 32, 'name': 'urls', 'dir': 'c2', 'linked': 1, 'url': 'http://10.182.95.138:4200/styles.js/urls', 'fetched': true, 'code': 404, 'len': 153, 'decl_mime': 'text/html', 'sniff_mime': '[none]', 'cset': 'utf-8', 'missing': true, 'csens': false, 'child_cnt': 0, 'issue_cnt': [ 0, 0, 0, 0, 0 ], 'sig': 0xffdfffff }
+];

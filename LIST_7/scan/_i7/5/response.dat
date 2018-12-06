@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: text/html
+Date: Thu, 06 Dec 2018 12:45:20 GMT
+Connection: keep-alive
+Transfer-Encoding: chunked
+
+<!DOCTYPE html><html><head><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta charset="utf-8"/><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/><script type="text/javascript" charset="utf-8" src="/__webpack_dev_server__/live.bundle.js"></script></head><body></body></html>

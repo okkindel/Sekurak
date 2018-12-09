@@ -40,7 +40,7 @@ app.use(cors());
 //  BCRYTP AND JWT
 ///////////////////////////////////////
 
-const saltRounds = 100;
+const saltRounds = 1;
 const timeOfToken = '100000';
 
 ///////////////////////////////////////
@@ -236,7 +236,7 @@ app.post('/list-admin', (req, res, next) => {
   try {
     jwt.verify(req.headers.authorization, 'zagor', function (err, decoded) {
       if (req.body.author == decoded.user && decoded.user == 'admin') {
-        connection.query('SELECT nadawca, odbiorca, data FROM przelewy WHERE accepted = ?', false, function (err, rows) {
+        connection.query('SELECT nadawca, odbiorca, data, id FROM przelewy WHERE accepted = ?', false, function (err, rows) {
           if (err) {
             res.status(500).json({
               status: 'Something went wrong.'
@@ -282,6 +282,10 @@ app.post('/change-accepted', (req, res, next) => {
           if (rows.changedRows != 0) {
             res.status(200).json({
               status: 'success',
+            });
+          } else {
+            res.status(500).json({
+              status: 'Something went wrong.'
             });
           } if (err) {
             res.status(500).json({

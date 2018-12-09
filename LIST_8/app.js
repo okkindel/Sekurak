@@ -37,13 +37,13 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
-app.use(cors());
+// app.use(cors());
 
 ///////////////////////////////////////
 //  BCRYTP AND JWT
 ///////////////////////////////////////
 
-const saltRounds = 2000;
+const saltRounds = 5;
 const timeOfToken = '100000';
 
 ///////////////////////////////////////
@@ -87,8 +87,8 @@ app.post('/login', (req, res, next) => {
           var token = jwt.sign({
             user: req.body.email
           }, 'zagor', {
-            expiresIn: timeOfToken
-          });
+              expiresIn: timeOfToken
+            });
           res.status(200).json({
             status: 'success',
             token: token
@@ -240,7 +240,7 @@ app.post('/list-admin', (req, res, next) => {
   try {
     jwt.verify(req.headers.authorization, 'zagor', function (err, decoded) {
       if (req.body.author == decoded.user && decoded.user == 'admin') {
-        connection.query('SELECT * FROM przelewy WHERE accepted = ?', false, function (err, rows) {
+        connection.query('SELECT nadawca, odbiorca, data, id FROM przelewy WHERE accepted = ?', false, function (err, rows) {
           if (err) {
             res.status(500).json({
               status: 'Something went wrong.'
@@ -287,6 +287,10 @@ app.post('/change-accepted', (req, res, next) => {
             res.status(200).json({
               status: 'success',
             });
+          } else {
+            res.status(500).json({
+              status: 'Something went wrong.'
+            });
           } if (err) {
             res.status(500).json({
               status: 'Something went wrong.'
@@ -320,11 +324,11 @@ app.get(/^(.+)$/, function (req, res) {
 //  404 NOT FOUND
 ///////////////////////////////////////
 
-// app.use((req, res, next) => {
-//   const err = new Error('Not Found');
-//   err.status = 404;
-//   next(err);
-// });
+app.use((req, res, next) => {
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
 
 ///////////////////////////////////////
 //  INTERNAL ERROR
@@ -351,5 +355,5 @@ var options = {
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(options, app);
 
-httpServer.listen(1330);
-httpsServer.listen(1337);
+httpServer.listen(1331);
+httpsServer.listen(1332);

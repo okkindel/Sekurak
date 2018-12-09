@@ -236,7 +236,7 @@ app.post('/list-admin', (req, res, next) => {
   try {
     jwt.verify(req.headers.authorization, 'zagor', function (err, decoded) {
       if (req.body.author == decoded.user && decoded.user == 'admin') {
-        connection.query('SELECT * FROM przelewy WHERE accepted = ?', false, function (err, rows) {
+        connection.query('SELECT nadawca, odbiorca, data FROM przelewy WHERE accepted = ?', false, function (err, rows) {
           if (err) {
             res.status(500).json({
               status: 'Something went wrong.'

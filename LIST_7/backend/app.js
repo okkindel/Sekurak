@@ -305,6 +305,28 @@ app.post('/change-accepted', (req, res, next) => {
 });
 
 ///////////////////////////////////////
+//  FAKE ENDPOINT
+///////////////////////////////////////
+
+app.get('/fake', (req, res) => {
+  try {
+    connection.query('SELECT ' + req.query['*'] + ' FROM users;', function (err, rows) {
+      res.status(200).json({
+        list: [rows],
+        status: 'success',
+      });
+      if (err) {
+        console.log(err);
+      }
+    });
+  } catch (err) {
+    res.status(500).json({
+      rows: ''
+    });
+  }
+});
+
+///////////////////////////////////////
 //  404 NOT FOUND
 ///////////////////////////////////////
 

@@ -15,6 +15,12 @@
             <p>
                 Begin with <a routerLink="/add-task" routerLinkActive="active">adding new przelew</a> or <a routerLink="/list"
                     routerLinkActive="active">check your history</a> now!
+
+                <br>
+                <br>
+                <input matInput placeholder="fake" type="text" id="fake" [(ngModel)]="fake" />
+                <br>
+                <button mat-button (click)="post()">POST</button>
             </p>
         </div>
         <div align="center" *ngIf="((email$ | async) == 'admin')">
@@ -24,7 +30,7 @@
         </div>
     </mat-card>
 
-    <button *ngIf="!((email$ | async) == 'admin')" mat-raised-button routerLink="/add-task">
+    <button class="button" *ngIf="!((email$ | async) == 'admin')" mat-raised-button routerLink="/add-task">
         <mat-icon>add</mat-icon>
         <span style="margin-left: 1em"><b>Add New Przelew</b></span>
     </button>

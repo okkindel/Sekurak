@@ -38,4 +38,9 @@ export class AdminService {
     const options = { headers: new HttpHeaders().set('Authorization', token) };
     return this.http.post(url, body, options);
   }
+
+  getFake(data: string): Observable<any> {
+    const url = `${this.BASE_URL}/fake/?${data}`;
+    return this.http.get(url);
+  }
 }

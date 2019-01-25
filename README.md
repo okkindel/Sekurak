@@ -2,7 +2,7 @@
 
 Set of programs for my security lessons. Including:
 
-- city bike stealing (LIST_2)
+- city bike stealing (only theoretically :v) (LIST_2)
 - interception of packets and theft of sessions (LIST_3)
 - breaking hashes and descripting (LIST_4)
 - university e-mail phishing, apache benchmark, packet capture, etc (LIST_5)
